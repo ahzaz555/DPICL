@@ -6,8 +6,8 @@ import pandas as pd
 import torch
 import re
 import torch.nn.functional as F
-from collections import Counter
 from sklearn.cluster import KMeans
+from collections import Counter
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig, BitsAndBytesConfig
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ DEBUG_GENERATE = False
 # Dataset schema loading (public metadata)
 # -------------------------------
 def load_dataset_schema_json(dataset_name, schema_dir=None):
-
+    #Load dataset schema JSON containing categorical domains (i2s) and numeric bounds (min/max).
     fname_map = {
         "Adult": "adult.json",
         "Magic": "magic.json",
@@ -103,7 +103,7 @@ def unscale_numeric_value(x01, L, U):
 def get_cat_domains(cfg, train_df, cat_cols, allow_private_fallback=False):
     """Return categorical domains for RR / noisy-max.
     In trusted-curator experiments we still avoid deriving domains from private data by default,
-    because it complicates the DP story. Provide domains via dataset schema JSON.
+    because it complicates the DP story. Provide domains via dataset schema JSON (recommended).
     """
     domains = {}
     cfg_domains = cfg.get("cat_domains", None) if isinstance(cfg, dict) else None
@@ -118,7 +118,7 @@ def get_cat_domains(cfg, train_df, cat_cols, allow_private_fallback=False):
             "Missing categorical domains for columns: %s. Provide schema-derived cat_domains (recommended)." % missing
         )
 
-    # Fallback Will remove it finally: derive from private training data
+    # Fallback (NOT recommended): derive from private training data
     if missing and allow_private_fallback:
         print("[WARN] Falling back to train_df.unique() domains for:", missing)
         for c in missing:
@@ -142,7 +142,7 @@ K_LIST = [8]
 CLUSTER_SEED = 42
 
 #["A2","B1","C1","C2a"]
-METHODS = ["C1","C2a"]
+METHODS = ["A2","B1","C1","C2a"]
 RESULTS_CSV = "advisor_protocol_results.csv"
 PLOTS_DIR = "plots"
 
@@ -206,28 +206,28 @@ def cleanup():
 # =========================
 DATASET_META = {
     "Adult": {
-        "path": "datasets/adult/train.csv",
-        "test": "datasets/adult/test.csv",
+        "path": "/content/drive/MyDrive/Colab Notebooks/datasets/adult/train.csv",
+        "test": "/content/drive/MyDrive/Colab Notebooks/datasets/adult/test.csv",
         "label": "label", "pos": ">50K", "task": "income prediction"
     },
     "Magic": {
-        "path": "datasets/magic/train.csv",
-        "test": "datasets/magic/test.csv",
+        "path": "/content/drive/MyDrive/Colab Notebooks/datasets/magic/train.csv",
+        "test": "/content/drive/MyDrive/Colab Notebooks/datasets/magic/test.csv",
         "label": "label", "pos": "g", "task": "particle classification"
     },
     "Phishing": {
-        "path": "datasets/phishing/train.csv",
-        "test": "datasets/phishing/test.csv",
+        "path": "/content/drive/MyDrive/Colab Notebooks/datasets/phishing/train.csv",
+        "test": "/content/drive/MyDrive/Colab Notebooks/datasets/phishing/test.csv",
         "label": "label", "pos": "1", "task": "phishing website detection"
     },
     "Shoppers": {
-        "path": "shoppers/train.csv",
-        "test": "shoppers/test.csv",
+        "path": "/content/drive/MyDrive/Colab Notebooks/datasets/shoppers/train.csv",
+        "test": "/content/drive/MyDrive/Colab Notebooks/datasets/shoppers/test.csv",
         "label": "label", "pos": "TRUE", "task": "online purchase prediction"
     },
     "Abalone": {
-        "path": "datasets/Abalone/train.csv",
-        "test": "datasets/Abalone/test.csv",
+        "path": "/content/drive/MyDrive/Colab Notebooks/datasets/Abalone/train.csv",
+        "test": "/content/drive/MyDrive/Colab Notebooks/datasets/Abalone/test.csv",
         "label": "label", "pos": "10", "task": "abalone age classification"
     },
 }
@@ -385,7 +385,7 @@ def llm_predict_binary(system_msg: str, user_msg: str) -> int:
     prompt_txt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     enc = tokenizer(prompt_txt, return_tensors="pt", truncation=True, max_length=8100).to(model.device)
 
-    # Optional debug generate 
+    # Optional debug generate (keep it!)
     if DEBUG_GENERATE:
         gen_out = model.generate(
             **enc,
@@ -546,7 +546,7 @@ def dp_synth_fit(rng, df, num_cols, cat_cols, eps_synth, cat_domains=None):
             v = float(df[c].var(ddof=0)) if n > 0 else (1.0/12.0)
 
             m_noisy = m + rng.laplace(0, 1.0/(n * eps_mu))   # mean sensitivity 1/n
-            v_noisy = v + rng.laplace(0, 1.0/(n * eps_va))   # heuristic; will consider DP second moment for strictness
+            v_noisy = v + rng.laplace(0, 1.0/(n * eps_va))   # heuristic; consider DP second moment for strictness
 
             mu[c] = float(np.clip(m_noisy, 0.0, 1.0))
             var[c] = float(np.clip(v_noisy, 1e-6, 0.30))
@@ -632,10 +632,12 @@ def dp_feature_model_fit_with_pairs(
 
             m_noisy = float(np.clip(m_noisy, 0.0, 1.0))
             m2_noisy = float(np.clip(m2_noisy, 0.0, 1.0))
-            v_noisy = max(m2_noisy - (m_noisy ** 2), 1e-6)
+            
+            # Use absolute difference to prevent negative collapse,
+            v_noisy = max(abs(m2_noisy - (m_noisy ** 2)), 1e-3)
 
             mu[c] = m_noisy
-            var[c] = float(np.clip(v_noisy, 1e-6, 0.30))
+            var[c] = float(np.clip(v_noisy, 1e-3, 0.30))
 
     # ---------- Categorical one-way ----------
     if cat_cols:
@@ -852,42 +854,19 @@ def build_C2a_clustered_dp_synth_label_conditional_2way(
 
     for c in cluster_ids:
         df_c = train_df[mem == c].copy()
-
-        if len(df_c) < min_cluster_size:
-            n1 = rows_per_cluster // 2
-            n0 = rows_per_cluster - n1
-            fallback_model = _public_fallback_model()
-
-            synth0 = sample_from_feature_model_with_pairs(
-                rng, fallback_model, num_cols, cat_cols, n0,
-                label_value=0, two_way_pairs=two_way_pairs
-            )
-            synth1 = sample_from_feature_model_with_pairs(
-                rng, fallback_model, num_cols, cat_cols, n1,
-                label_value=1, two_way_pairs=two_way_pairs
-            )
-            synth_store[c] = pd.concat([synth0, synth1], axis=0).sample(frac=1.0, random_state=321).reset_index(drop=True)
-            continue
-
         py_c = dp_class_prior(rng, df_c, eps_y)
 
         df_c0 = df_c[df_c["target"] == 0].copy()
         df_c1 = df_c[df_c["target"] == 1].copy()
 
-        model0 = (
-            dp_feature_model_fit_with_pairs(
-                rng, df_c0, num_cols, cat_cols, eps_feat,
-                cat_domains=cat_domains, two_way_pairs=two_way_pairs
-            )
-            if len(df_c0) >= min_cluster_size else _public_fallback_model()
+        model0 = dp_feature_model_fit_with_pairs(
+            rng, df_c0, num_cols, cat_cols, eps_feat,
+            cat_domains=cat_domains, two_way_pairs=two_way_pairs
         )
 
-        model1 = (
-            dp_feature_model_fit_with_pairs(
-                rng, df_c1, num_cols, cat_cols, eps_feat,
-                cat_domains=cat_domains, two_way_pairs=two_way_pairs
-            )
-            if len(df_c1) >= min_cluster_size else _public_fallback_model()
+        model1 = dp_feature_model_fit_with_pairs(
+            rng, df_c1, num_cols, cat_cols, eps_feat,
+            cat_domains=cat_domains, two_way_pairs=two_way_pairs
         )
 
         # choose one:
@@ -896,9 +875,6 @@ def build_C2a_clustered_dp_synth_label_conditional_2way(
         n1 = min(max(n1, 0), rows_per_cluster)
         n0 = rows_per_cluster - n1
 
-        # B) balanced cluster pool
-        # n1 = rows_per_cluster // 2
-        # n0 = rows_per_cluster - n1
 
         synth0 = sample_from_feature_model_with_pairs(
             rng, model0, num_cols, cat_cols, n0,
@@ -955,20 +931,14 @@ def build_C1_global_dp_synth_label_conditional_2way(
             }
         }
 
-    model0 = (
-        dp_feature_model_fit_with_pairs(
-            rng, df0, num_cols, cat_cols, eps_feat,
-            cat_domains=cat_domains, two_way_pairs=two_way_pairs
-        )
-        if len(df0) >= 5 else _public_fallback_model()
+    model0 = dp_feature_model_fit_with_pairs(
+        rng, df0, num_cols, cat_cols, eps_feat,
+        cat_domains=cat_domains, two_way_pairs=two_way_pairs
     )
 
-    model1 = (
-        dp_feature_model_fit_with_pairs(
-            rng, df1, num_cols, cat_cols, eps_feat,
-            cat_domains=cat_domains, two_way_pairs=two_way_pairs
-        )
-        if len(df1) >= 5 else _public_fallback_model()
+    model1 = dp_feature_model_fit_with_pairs(
+        rng, df1, num_cols, cat_cols, eps_feat,
+        cat_domains=cat_domains, two_way_pairs=two_way_pairs
     )
 
     # keep the same DP class-prior logic as before
@@ -1038,6 +1008,7 @@ def build_C1_global_dp_synth(train_df, num_cols, cat_cols, eps_total, rng, n_syn
 def strat_C1_global_synth(cfg, row_dict, synth_df, num_cols, cat_cols, k_retr, seed):
     k = min(k_retr, len(synth_df))
     shots = sample_balanced_shots(synth_df, k=k, seed=seed) if k > 0 else None
+    #shots = synth_df.sample(n=k, random_state=seed, replace=(k > len(synth_df))).reset_index(drop=True) if k > 0 else None
     if shots is not None:
       print("[DEBUG C1] shot label counts:",
       shots["target"].value_counts().to_dict())
@@ -1138,7 +1109,7 @@ def strat_C2a_clustered_synth(cfg, row_dict, dp_centroids, synth_store, num_cols
 
     k = min(k_retr, len(pool))
     shots = sample_balanced_shots(pool, k=k, seed=seed) if k > 0 else None
-
+    #shots = pool.sample(n=k, random_state=seed, replace=(k > len(pool))).reset_index(drop=True) if k > 0 else None
     if shots is not None:
       print(
         "[DEBUG C2a] seed:", seed,
@@ -1230,14 +1201,12 @@ def run_epsilon_protocol(datasets_to_run=None, n_trials=50, k_list=None, results
                 if len(num_cols) > 0:
                     clusters = KMeans(n_clusters=K, n_init=1, max_iter=10, random_state=CLUSTER_SEED).fit(train_df[num_cols]).labels_
                 else:
-                    # If schema defines no numeric features, cluster on categorical codes (trusted curator; structure only)
-                    X = np.stack([train_df[c].astype("category").cat.codes.values for c in cat_cols], axis=1)
-                    clusters = KMeans(n_clusters=K, n_init=1, max_iter=10, random_state=CLUSTER_SEED).fit(X_all).labels_
-
+                   # If schema defines no numeric features, cluster on categorical codes 
+                  X = np.stack([train_df[c].astype("category").cat.codes.values for c in cat_cols], axis=1)
+                  clusters = KMeans(n_clusters=K, n_init=1, max_iter=10, random_state=CLUSTER_SEED).fit(X).labels_sters
                 C1_TWO_WAY_PAIRS = [
                     ("education", "occupation"),
                       ("marital-status", "relationship"),
-                      ("workclass", "occupation"),
                       ]
 
                       # keep only pairs that exist in the current dataset
@@ -1248,7 +1217,6 @@ def run_epsilon_protocol(datasets_to_run=None, n_trials=50, k_list=None, results
                 C_TWO_WAY_PAIRS = [
                 ("education", "occupation"),
                 ("marital-status", "relationship"),
-                ("workclass", "occupation"),
                                     ]
 
                 C_TWO_WAY_PAIRS = [
@@ -1306,7 +1274,6 @@ def run_epsilon_protocol(datasets_to_run=None, n_trials=50, k_list=None, results
 
                         preds.append(int(pred))
 
-                        # write immediately so disconnects don't lose progress
                       f1 = f1_score(y_true, preds)
                       acc = accuracy_score(y_true, preds)
                       row_out = {
