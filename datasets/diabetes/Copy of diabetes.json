@@ -1,0 +1,252 @@
+{
+  "columns": [
+    {
+      "name": "Diabetes_binary",
+      "type": "categorical",
+      "i2s": ["0", "1"],
+      "size": 2,
+      "value_labels": {
+        "0": "No diabetes",
+        "1": "Prediabetes or diabetes"
+      },
+      "description": "Target label."
+    },
+    {
+      "name": "HighBP",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary diagnosed-risk indicator. Indicates if the individual was told by a health professional that they have high blood pressure."
+    },
+    {
+      "name": "HighChol",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary diagnosed-risk indicator. Indicates if the individual was told they have high cholesterol."
+    },
+    {
+      "name": "CholCheck",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary healthcare-utilization indicator showing whether the individual had a cholesterol screening within the past five years. This measures screening behavior, not disease severity."
+    },
+    {
+      "name": "BMI",
+      "type": "continuous",
+      "min": 12.0,
+      "max": 98.0,
+      "unit": "kg/m²",
+      "description": "Body Mass Index. Higher values generally indicate greater obesity-related diabetes risk."
+    },
+    {
+      "name": "Smoker",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary lifetime-smoking indicator. A value of 1 means the individual smoked at least 100 cigarettes."
+    },
+    {
+      "name": "Stroke",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary medical-history indicator. A value of 1 means the individual has previously had a stroke."
+    },
+    {
+      "name": "HeartDiseaseorAttack",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary medical-history indicator for coronary heart disease or myocardial infarction."
+    },
+    {
+      "name": "PhysActivity",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary lifestyle indicator. A value of 1 means the individual performed physical activity during the past 30 days outside their regular job."
+    },
+    {
+      "name": "Fruits",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary dietary indicator for consuming fruit at least once per day."
+    },
+    {
+      "name": "Veggies",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary dietary indicator for consuming vegetables at least once per day."
+    },
+    {
+      "name": "HvyAlcoholConsump",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary heavy-alcohol-consumption indicator."
+    },
+    {
+      "name": "AnyHealthcare",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary healthcare-access indicator showing whether the individual has health coverage."
+    },
+    {
+      "name": "NoDocbcCost",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No",
+        "1.0": "Yes"
+      },
+      "description": "Binary healthcare-access indicator showing whether the individual could not visit a doctor because of cost."
+    },
+    {
+      "name": "GenHlth",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 5.0,
+      "unit": "scale",
+      "value_labels": {
+        "1.0": "Excellent",
+        "2.0": "Very Good",
+        "3.0": "Good",
+        "4.0": "Fair",
+        "5.0": "Poor"
+      },
+      "description": "Self-rated health score. Larger values represent worse overall health."
+    },
+    {
+      "name": "MentHlth",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 30.0,
+      "unit": "days",
+      "description": "Number of poor mental-health days during the past 30 days."
+    },
+    {
+      "name": "PhysHlth",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 30.0,
+      "unit": "days",
+      "description": "Count of physically unhealthy days during the past 30 days. A larger value means more days of poor physical health."
+    },
+    {
+      "name": "DiffWalk",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "No serious difficulty",
+        "1.0": "Serious difficulty walking or climbing stairs"
+      },
+      "description": "Binary functional-limitation indicator."
+    },
+    {
+      "name": "Sex",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "value_labels": {
+        "0.0": "Female",
+        "1.0": "Male"
+      },
+      "description": "Binary sex code."
+    },
+    {
+      "name": "Age",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 13.0,
+      "unit": "category",
+      "value_labels": {
+        "1.0": "18-24 years",
+        "2.0": "25-29 years",
+        "3.0": "30-34 years",
+        "4.0": "35-39 years",
+        "5.0": "40-44 years",
+        "6.0": "45-49 years",
+        "7.0": "50-54 years",
+        "8.0": "55-59 years",
+        "9.0": "60-64 years",
+        "10.0": "65-69 years",
+        "11.0": "70-74 years",
+        "12.0": "75-79 years",
+        "13.0": "80 or older"
+      },
+      "description": "Ordered age-group code. Larger values represent older age groups."
+    },
+    {
+      "name": "Education",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 6.0,
+      "unit": "scale (1-6)",
+      "description": "Ordered education-level code from 1 to 6. Larger values indicate higher educational attainment."
+    },
+    {
+      "name": "Income",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 8.0,
+      "unit": "scale (1-8)",
+      "description": "Ordered household-income code from 1 to 8. Larger values indicate higher income."
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 152208,
+  "val_size": 50736,
+  "test_size": 50736,
+  "label": "Diabetes_binary"
+}

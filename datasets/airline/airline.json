@@ -1,0 +1,308 @@
+{
+  "columns": [
+    {
+      "name": "Gender",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "Female",
+        "Male"
+      ],
+      "description": "Passenger demographic attribute: biological/recorded gender of the passenger.",
+      "semantic_type": "categorical"
+    },
+    {
+      "name": "Customer Type",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "Loyal Customer",
+        "disloyal Customer"
+      ],
+      "description": "Customer relationship attribute: the passenger loyalty status.",
+      "semantic_type": "categorical"
+    },
+    {
+  "name": "Age",
+  "type": "continuous",
+  "min": 7.0,
+  "max": 85.0,
+  "description": "The age of the passenger in years.",
+  "semantic_type": "continuous"
+},
+    {
+      "name": "Type of Travel",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "Business travel",
+        "Personal Travel"
+      ],
+      "description": "Trip-context attribute: the purpose of the passenger's flight (business or personal travel).",
+      "semantic_type": "categorical"
+    },
+    {
+      "name": "Class",
+      "type": "categorical",
+      "size": 3,
+      "i2s": [
+        "Business",
+        "Eco",
+        "Eco Plus"
+      ],
+      "description": "Trip-context attribute: the travel class selected by the passenger.",
+      "semantic_type": "categorical"
+    },
+    {
+  "name": "Flight Distance",
+  "type": "continuous",
+  "min": 31.0,
+  "max": 4983.0,
+  "description": "The flight distance in miles.",
+  "semantic_type": "continuous"
+},
+    {
+      "name": "Inflight wifi service",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of inflight Wi-Fi service on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Departure/Arrival time convenient",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Schedule/airport-convenience rating: passenger rating of departure and arrival time convenience on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Ease of Online booking",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Digital/pre-flight experience rating: passenger rating of the online booking experience on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Gate location",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Airport/boarding experience rating: passenger rating of gate-location convenience on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Food and drink",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of inflight food and drink quality on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Online boarding",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Digital/pre-flight experience rating: passenger rating of the online boarding process on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Seat comfort",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of seat comfort on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Inflight entertainment",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of inflight entertainment on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "On-board service",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of overall on-board service on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Leg room service",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of leg-room service on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Baggage handling",
+      "type": "categorical",
+      "size": 5,
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Airport/boarding experience rating: passenger rating of baggage handling on the dataset-defined 1-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Checkin service",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Airport/boarding experience rating: passenger rating of check-in service on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Inflight service",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of inflight service on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+    {
+      "name": "Cleanliness",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Inflight service-experience rating: passenger rating of aircraft cleanliness on the dataset-defined 0-to-5 scale.",
+      "semantic_type": "ordinal rating"
+    },
+{
+  "name": "Departure Delay in Minutes",
+  "type": "continuous",
+  "min": 0.0,
+  "max": 1592.0,
+  "description": "The departure delay in minutes.",
+  "semantic_type": "continuous"
+},
+    {
+  "name": "Arrival Delay in Minutes",
+  "type": "continuous",
+  "min": 0.0,
+  "max": 1584.0,
+  "description": "The arrival delay in minutes.",
+  "semantic_type": "continuous"
+},
+    {
+      "name": "satisfaction",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "neutral or dissatisfied",
+        "satisfied"
+      ],
+      "description": "Target class label indicating whether the passenger is satisfied or neutral/dissatisfied."
+    }
+  ],
+  "task": "binary_classification",
+  "task_description": "Predict whether an airline passenger is satisfied or neutral or dissatisfied based on demographic, travel, service-rating, distance, and delay attributes.",
+  "train_size": 77928,
+  "val_size": 25976,
+  "test_size": 25976,
+  "label": "satisfaction",
+  "positive_label": "satisfied",
+  "public_schema_note": "Qwen-facing public semantic schema: empirical continuous min/max bounds removed; service attributes annotated with public semantic groups to support joint redundancy reasoning."
+}

@@ -1,0 +1,162 @@
+{
+  "columns": [
+    {
+      "name": "ID",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 30000.0
+    },
+    {
+      "name": "LIMIT_BAL",
+      "type": "continuous",
+      "min": 10000.0,
+      "max": 1000000.0
+    },
+    {
+      "name": "SEX",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 2.0
+    },
+    {
+      "name": "EDUCATION",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 6.0
+    },
+    {
+      "name": "MARRIAGE",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 3.0
+    },
+    {
+      "name": "AGE",
+      "type": "continuous",
+      "min": 21.0,
+      "max": 75.0
+    },
+    {
+      "name": "PAY_0",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 8.0
+    },
+    {
+      "name": "PAY_2",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 7.0
+    },
+    {
+      "name": "PAY_3",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 8.0
+    },
+    {
+      "name": "PAY_4",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 8.0
+    },
+    {
+      "name": "PAY_5",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 8.0
+    },
+    {
+      "name": "PAY_6",
+      "type": "continuous",
+      "min": -2.0,
+      "max": 8.0
+    },
+    {
+      "name": "BILL_AMT1",
+      "type": "continuous",
+      "min": -165580.0,
+      "max": 964511.0
+    },
+    {
+      "name": "BILL_AMT2",
+      "type": "continuous",
+      "min": -69777.0,
+      "max": 983931.0
+    },
+    {
+      "name": "BILL_AMT3",
+      "type": "continuous",
+      "min": -61506.0,
+      "max": 855086.0
+    },
+    {
+      "name": "BILL_AMT4",
+      "type": "continuous",
+      "min": -46627.0,
+      "max": 891586.0
+    },
+    {
+      "name": "BILL_AMT5",
+      "type": "continuous",
+      "min": -81334.0,
+      "max": 927171.0
+    },
+    {
+      "name": "BILL_AMT6",
+      "type": "continuous",
+      "min": -209051.0,
+      "max": 961664.0
+    },
+    {
+      "name": "PAY_AMT1",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 873552.0
+    },
+    {
+      "name": "PAY_AMT2",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1215471.0
+    },
+    {
+      "name": "PAY_AMT3",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 896040.0
+    },
+    {
+      "name": "PAY_AMT4",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 621000.0
+    },
+    {
+      "name": "PAY_AMT5",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 417990.0
+    },
+    {
+      "name": "PAY_AMT6",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 527143.0
+    },
+    {
+      "name": "label",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "size": 2
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 18000,
+  "val_size": 6000,
+  "test_size": 6000,
+  "label": "label"
+}

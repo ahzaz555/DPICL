@@ -1,0 +1,226 @@
+{
+  "columns": [
+    {
+      "i2s": ["-1", "1"],
+      "name": "having_IP_Address",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether the URL uses an IP address instead of a domain name, often used by phishers to hide their identity."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "URL_Length",
+      "size": 3,
+      "type": "categorical",
+      "description": "Measures the character length of the URL; phishers often use long URLs to hide the suspicious domain."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Shortining_Service",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether a URL shortening service (like bit.ly) is used to redirect and hide the true malicious URL."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "having_At_Symbol",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether the URL contains an '@' symbol, which causes the browser to ignore everything preceding it."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "double_slash_redirecting",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether a double slash '//' appears after the initial protocol, a technique used for hidden redirection."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Prefix_Suffix",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether the domain name includes a hyphen '-', a common technique to make a fake URL look like a legitimate one."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "having_Sub_Domain",
+      "size": 3,
+      "type": "categorical",
+      "description": "Evaluates the number of subdomains in the URL; phishing sites often use multiple subdomains to appear legitimate."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "SSLfinal_State",
+      "size": 3,
+      "type": "categorical",
+      "description": "Evaluates the HTTPS and SSL certificate's validity, issuer trustworthiness, and age."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Domain_registeration_length",
+      "size": 2,
+      "type": "categorical",
+      "description": "Measures how long the domain has been registered; phishing sites typically have very short registration lifespans."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Favicon",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether the website's favicon image is loaded from a domain different from the main URL."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "port",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether non-standard network ports are open, which is often a sign of a compromised or malicious server."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "HTTPS_token",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates whether the string 'https' is deceptively included within the domain part of the URL."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Request_URL",
+      "size": 2,
+      "type": "categorical",
+      "description": "Measures the percentage of external objects (like images or videos) loaded from a different domain."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "URL_of_Anchor",
+      "size": 3,
+      "type": "categorical",
+      "description": "Evaluates whether anchor tags link to different domains, do not link to any webpage, or link to the same webpage."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "Links_in_tags",
+      "size": 3,
+      "type": "categorical",
+      "description": "Examines the percentage of links within metadata, script, and link HTML tags pointing to external domains."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "SFH",
+      "size": 3,
+      "type": "categorical",
+      "description": "Server Form Handler; evaluates if webpage form actions are handled suspiciously (e.g., routed to 'about:blank' or a different domain)."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Submitting_to_email",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks if the website forms submit data directly to an email address (mailto:) instead of a secure server."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Abnormal_URL",
+      "size": 2,
+      "type": "categorical",
+      "description": "Identifies if the host name is not included in the URL based on WHOIS database records."
+    },
+    {
+      "i2s": ["0", "1"],
+      "name": "Redirect",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates if the website uses excessive or hidden redirection to route users away from their intended destination."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "on_mouseover",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks if JavaScript is used to alter the status bar to hide the true link destination when a user hovers over it."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "RightClick",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates if right-clicking is disabled on the page, a tactic used to prevent users from viewing the page source code."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "popUpWidnow",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks if the website generates pop-up windows, especially those containing text fields asking for personal information."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Iframe",
+      "size": 2,
+      "type": "categorical",
+      "description": "Indicates if invisible or borderless iframes are used to load external, potentially malicious content without the user noticing."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "age_of_domain",
+      "size": 2,
+      "type": "categorical",
+      "description": "The age of the domain; older domains are usually more trustworthy, whereas phishing domains are recently registered."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "DNSRecord",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks if the domain has a valid DNS record; phishing domains often lack these or are missing from WHOIS databases."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "web_traffic",
+      "size": 3,
+      "type": "categorical",
+      "description": "Evaluates the website's popularity and traffic rank (e.g., Alexa rank); phishing sites usually have low or unrecognized traffic."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Page_Rank",
+      "size": 2,
+      "type": "categorical",
+      "description": "Evaluates the importance of the webpage based on its PageRank value; lower scores are highly suspicious."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Google_Index",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks whether the website is currently indexed by Google; phishing sites are often not indexed."
+    },
+    {
+      "i2s": ["-1", "0", "1"],
+      "name": "Links_pointing_to_page",
+      "size": 3,
+      "type": "categorical",
+      "description": "Evaluates how many external links point to the webpage; legitimate sites usually have many incoming links."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "Statistical_report",
+      "size": 2,
+      "type": "categorical",
+      "description": "Checks if the website's IP or domain is currently present in recognized phishing statistical reports or blacklists."
+    },
+    {
+      "i2s": ["-1", "1"],
+      "name": "label",
+      "size": 2,
+      "type": "categorical",
+      "description": "The target classification label; indicates whether the website is legitimate or a phishing site."
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 7075,
+  "val_size": 1769,
+  "test_size": 2211,
+  "label": "Result"
+}

@@ -1,0 +1,189 @@
+{
+  "columns": [
+    {
+      "name": "Diabetes_binary",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "size": 2,
+      "description": "Binary target label: 0 = no diabetes; 1 = prediabetes or diabetes.",
+      "semantic_type": "binary target"
+    },
+    {
+      "name": "HighBP",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has been told by a health professional that they have high blood pressure (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "HighChol",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has been told by a health professional that their blood cholesterol is high (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "CholCheck",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual had a cholesterol check within the past five years (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+  "name": "BMI",
+  "type": "continuous",
+  "min": 12.0,
+  "max": 98.0,
+  "description": "The Body Mass Index (BMI) of the individual, an indicator of body fat based on height and weight.",
+  "semantic_type": "continuous"
+},
+    {
+      "name": "Smoker",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has smoked at least 100 cigarettes in their lifetime (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "Stroke",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has ever been told they had a stroke (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "HeartDiseaseorAttack",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has reported coronary heart disease or myocardial infarction/heart attack (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "PhysActivity",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual engaged in physical activity or exercise in the past 30 days, excluding their regular job (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "Fruits",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual consumes fruit one or more times per day (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "Veggies",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual consumes vegetables one or more times per day (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "HvyAlcoholConsump",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: heavy alcohol consumption according to the dataset/codebook definition (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "AnyHealthcare",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has any kind of health-care coverage (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "NoDocbcCost",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual needed to see a doctor in the past 12 months but could not because of cost (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "GenHlth",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 5.0,
+      "description": "Ordinal self-rated general-health category on a 1-to-5 scale, where 1 = excellent and 5 = poor.",
+      "semantic_type": "ordinal"
+    },
+    {
+      "name": "MentHlth",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 30.0,
+      "description": "Count of days in the past 30 days on which the individual reported poor mental health.",
+      "semantic_type": "count"
+    },
+    {
+      "name": "PhysHlth",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 30.0,
+      "description": "Count of days in the past 30 days on which the individual reported poor physical health.",
+      "semantic_type": "count"
+    },
+    {
+      "name": "DiffWalk",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary indicator: whether the individual has serious difficulty walking or climbing stairs (0 = no, 1 = yes).",
+      "semantic_type": "binary indicator"
+    },
+    {
+      "name": "Sex",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "description": "Binary-coded sex attribute: 0 = female, 1 = male.",
+      "semantic_type": "binary categorical"
+    },
+    {
+      "name": "Age",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 13.0,
+      "description": "Ordinal age-group category with 13 ordered levels (for example, 1 = age 18-24 and 13 = age 80 or older).",
+      "semantic_type": "ordinal"
+    },
+    {
+      "name": "Education",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 6.0,
+      "description": "Ordinal education-level category on a 1-to-6 scale, from lower educational attainment to college education or more.",
+      "semantic_type": "ordinal"
+    },
+    {
+      "name": "Income",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 8.0,
+      "description": "Ordinal household-income category on a 1-to-8 scale, from lower to higher income brackets.",
+      "semantic_type": "ordinal"
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 152208,
+  "val_size": 50736,
+  "test_size": 50736,
+  "label": "Diabetes_binary",
+  "public_schema_note": "Qwen-facing public semantic schema: storage types preserved for pipeline compatibility; semantic_type and descriptions identify binary, ordinal, count, and continuous variables. Empirical BMI min/max bounds removed."
+}

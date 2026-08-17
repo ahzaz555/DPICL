@@ -1,0 +1,317 @@
+{
+  "columns": [
+    {
+      "name": "Administrative",
+      "type": "continuous",
+      "min": 0,
+      "max": 27,
+      "prompt_name": "administrative pages visited",
+      "unit": "pages",
+      "description": "Number of administrative pages viewed during the browsing session."
+    },
+    {
+      "name": "Administrative_Duration",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 3398.75,
+      "prompt_name": "time on administrative pages",
+      "unit": "seconds",
+      "description": "Total time spent on administrative pages during the browsing session."
+    },
+    {
+      "name": "Informational",
+      "type": "continuous",
+      "min": 0,
+      "max": 24,
+      "prompt_name": "informational pages visited",
+      "unit": "pages",
+      "description": "Number of informational pages viewed during the browsing session."
+    },
+    {
+      "name": "Informational_Duration",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 2549.375,
+      "prompt_name": "time on informational pages",
+      "unit": "seconds",
+      "description": "Total time spent on informational pages during the browsing session."
+    },
+    {
+      "name": "ProductRelated",
+      "type": "continuous",
+      "min": 0,
+      "max": 705,
+      "prompt_name": "product-related pages visited",
+      "unit": "pages",
+      "description": "Number of product-related pages viewed during the browsing session."
+    },
+    {
+      "name": "ProductRelated_Duration",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 63973.52223,
+      "prompt_name": "time on product-related pages",
+      "unit": "seconds",
+      "description": "Total time spent on product-related pages during the browsing session."
+    },
+    {
+      "name": "BounceRates",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 0.2,
+      "prompt_name": "bounce rate",
+      "description": "Average bounce-rate proportion associated with the pages viewed in the session; larger values indicate more immediate exits."
+    },
+    {
+      "name": "ExitRates",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 0.2,
+      "prompt_name": "exit rate",
+      "description": "Average exit-rate proportion associated with the pages viewed in the session; larger values indicate a greater tendency to leave."
+    },
+    {
+      "name": "PageValues",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 361.7637419,
+      "prompt_name": "page value",
+      "description": "Estimated contribution of the viewed pages toward completing an e-commerce transaction."
+    },
+    {
+      "name": "SpecialDay",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "prompt_name": "special-day proximity",
+      "description": "A score from 0 to 1 indicating how close the session occurred to a special shopping day, with larger values meaning closer proximity."
+    },
+    {
+      "name": "Month",
+      "type": "categorical",
+      "i2s": [
+        "Aug",
+        "Dec",
+        "Feb",
+        "Jul",
+        "June",
+        "Mar",
+        "May",
+        "Nov",
+        "Oct",
+        "Sep"
+      ],
+      "size": 10,
+      "prompt_name": "session month",
+      "value_labels": {
+        "Aug": "August",
+        "Dec": "December",
+        "Feb": "February",
+        "Jul": "July",
+        "June": "June",
+        "Mar": "March",
+        "May": "May",
+        "Nov": "November",
+        "Oct": "October",
+        "Sep": "September"
+      },
+      "description": "Calendar month in which the browsing session occurred."
+    },
+    {
+      "name": "OperatingSystems",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "size": 8,
+      "prompt_name": "operating system category",
+      "value_labels": {
+        "1": "operating system category 1",
+        "2": "operating system category 2",
+        "3": "operating system category 3",
+        "4": "operating system category 4",
+        "5": "operating system category 5",
+        "6": "operating system category 6",
+        "7": "operating system category 7",
+        "8": "operating system category 8"
+      },
+      "description": "An anonymized category identifying the visitor's operating system."
+    },
+    {
+      "name": "Browser",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "size": 13,
+      "prompt_name": "browser category",
+      "value_labels": {
+        "1": "browser category 1",
+        "2": "browser category 2",
+        "3": "browser category 3",
+        "4": "browser category 4",
+        "5": "browser category 5",
+        "6": "browser category 6",
+        "7": "browser category 7",
+        "8": "browser category 8",
+        "9": "browser category 9",
+        "10": "browser category 10",
+        "11": "browser category 11",
+        "12": "browser category 12",
+        "13": "browser category 13"
+      },
+      "description": "An anonymized category identifying the visitor's web browser."
+    },
+    {
+      "name": "Region",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "size": 9,
+      "prompt_name": "geographic region category",
+      "value_labels": {
+        "1": "region category 1",
+        "2": "region category 2",
+        "3": "region category 3",
+        "4": "region category 4",
+        "5": "region category 5",
+        "6": "region category 6",
+        "7": "region category 7",
+        "8": "region category 8",
+        "9": "region category 9"
+      },
+      "description": "An anonymized category representing the visitor's geographic region."
+    },
+    {
+      "name": "TrafficType",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "size": 20,
+      "prompt_name": "traffic source category",
+      "value_labels": {
+        "1": "traffic source category 1",
+        "2": "traffic source category 2",
+        "3": "traffic source category 3",
+        "4": "traffic source category 4",
+        "5": "traffic source category 5",
+        "6": "traffic source category 6",
+        "7": "traffic source category 7",
+        "8": "traffic source category 8",
+        "9": "traffic source category 9",
+        "10": "traffic source category 10",
+        "11": "traffic source category 11",
+        "12": "traffic source category 12",
+        "13": "traffic source category 13",
+        "14": "traffic source category 14",
+        "15": "traffic source category 15",
+        "16": "traffic source category 16",
+        "17": "traffic source category 17",
+        "18": "traffic source category 18",
+        "19": "traffic source category 19",
+        "20": "traffic source category 20"
+      },
+      "description": "An anonymized category representing how the visitor arrived at the website."
+    },
+    {
+      "name": "VisitorType",
+      "type": "categorical",
+      "i2s": [
+        "New_Visitor",
+        "Other",
+        "Returning_Visitor"
+      ],
+      "size": 3,
+      "prompt_name": "visitor type",
+      "value_labels": {
+        "New_Visitor": "new visitor",
+        "Other": "other visitor type",
+        "Returning_Visitor": "returning visitor"
+      },
+      "description": "Whether the session belongs to a new visitor, returning visitor, or another visitor category."
+    },
+    {
+      "name": "Weekend",
+      "type": "categorical",
+      "i2s": [
+        "False",
+        "True"
+      ],
+      "size": 2,
+      "prompt_name": "weekend session",
+      "value_labels": {
+        "False": "no",
+        "True": "yes"
+      },
+      "description": "Whether the browsing session occurred on a weekend."
+    },
+    {
+      "name": "label",
+      "type": "categorical",
+      "i2s": [
+        "False",
+        "True"
+      ],
+      "size": 2,
+      "prompt_name": "purchase completed",
+      "value_labels": {
+        "False": "no purchase",
+        "True": "purchase completed"
+      },
+      "description": "Binary target indicating whether the browsing session resulted in a purchase."
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 7891,
+  "val_size": 1973,
+  "test_size": 2466,
+  "label": "label"
+}

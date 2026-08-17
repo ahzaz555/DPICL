@@ -1,0 +1,78 @@
+{
+    "columns": [
+        {
+            "min": 4.2835,
+            "max": 334.177,
+            "name": "fLength",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0,
+            "max": 256.382,
+            "name": "fWidth",
+            "type": "continuous"
+        },
+        {
+            "min": 1.9413,
+            "max": 5.3233,
+            "name": "fSize",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0131,
+            "max": 0.893,
+            "name": "fConc",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0003,
+            "max": 0.6752,
+            "name": "fConc1",
+            "type": "continuous"
+        },
+        {
+            "min": -457.9161,
+            "max": 575.2407,
+            "name": "fAsym",
+            "type": "continuous"
+        },
+        {
+            "min": -331.78,
+            "max": 238.321,
+            "name": "fM3Long",
+            "type": "continuous"
+        },
+        {
+            "min": -205.8947,
+            "max": 179.851,
+            "name": "fM3Trans",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0,
+            "max": 90.0,
+            "name": "fAlpha",
+            "type": "continuous"
+        },
+        {
+            "min": 1.2826,
+            "max": 495.561,
+            "name": "fDist",
+            "type": "continuous"
+        },
+        {
+            "i2s": [
+                "g",
+                "h"
+            ],
+            "name": "label",
+            "size": 2,
+            "type": "categorical"
+        }
+    ],
+    "task": "binary_classification",
+    "train_size": 12172,
+    "val_size": 3044,
+    "test_size": 3804,
+    "label": "class"
+}
