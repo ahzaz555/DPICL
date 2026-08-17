@@ -1,0 +1,62 @@
+{
+  "dataset": "Adult",
+  "generation_policy": "Generate once from public metadata, freeze, and reuse unchanged for every epsilon, K, synthesis method, and trial seed.",
+  "normalized_weights": {
+    "age": 1.225,
+    "capital-gain": 1.5750000000000002,
+    "capital-loss": 0.7000000000000001,
+    "education": 1.4000000000000001,
+    "education-num": 1.4000000000000001,
+    "fnlwgt": 0.17500000000000002,
+    "hours-per-week": 1.225,
+    "marital-status": 1.05,
+    "native-country": 0.875,
+    "occupation": 1.225,
+    "race": 0.525,
+    "relationship": 0.7000000000000001,
+    "sex": 0.875,
+    "workclass": 1.05
+  },
+  "prompt_version": "llm_score_v3",
+  "public_payload": {
+    "dataset": "Adult",
+    "feature_descriptions": {
+      "age": "Feature name: age. Public type: continuous. Public numeric bounds: [17, 90]. Interpret as a numerical feature.",
+      "capital-gain": "Feature name: capital-gain. Public type: continuous. Public numeric bounds: [0, 99999]. Interpret as a numerical feature.",
+      "capital-loss": "Feature name: capital-loss. Public type: continuous. Public numeric bounds: [0, 4356]. Interpret as a numerical feature.",
+      "education": "Feature name: education. Public type: categorical. Public categorical values: 10th, 11th, 12th, 1st-4th, 5th-6th, 7th-8th, 9th, Assoc-acdm, Assoc-voc, Bachelors, Doctorate, HS-grad, Masters, Preschool, Prof-school, Some-college. Interpret as a categorical feature.",
+      "education-num": "Feature name: education-num. Public type: continuous. Public numeric bounds: [1, 16]. Interpret as a numerical feature.",
+      "fnlwgt": "Feature name: fnlwgt. Public type: continuous. Public numeric bounds: [12285, 1484705]. Interpret as a numerical feature.",
+      "hours-per-week": "Feature name: hours-per-week. Public type: continuous. Public numeric bounds: [1, 99]. Interpret as a numerical feature.",
+      "marital-status": "Feature name: marital-status. Public type: categorical. Public categorical values: Divorced, Married-AF-spouse, Married-civ-spouse, Married-spouse-absent, Never-married, Separated, Widowed. Interpret as a categorical feature.",
+      "native-country": "Feature name: native-country. Public type: categorical. Public categorical values: ?, Cambodia, Canada, China, Columbia, Cuba, Dominican-Republic, Ecuador, El-Salvador, England, France, Germany, Greece, Guatemala, Haiti, Holand-Netherlands, Honduras, Hong, Hungary, India, Iran, Ireland, Italy, Jamaica, Japan, Laos, Mexico, Nicaragua, Outlying-US(Guam-USVI-etc), Peru, Philippines, Poland, Portugal, Puerto-Rico, Scotland, South, Taiwan, Thailand, Trinadad&Tobago, United-States, Vietnam, Yugoslavia. Interpret as a categorical feature.",
+      "occupation": "Feature name: occupation. Public type: categorical. Public categorical values: ?, Adm-clerical, Armed-Forces, Craft-repair, Exec-managerial, Farming-fishing, Handlers-cleaners, Machine-op-inspct, Other-service, Priv-house-serv, Prof-specialty, Protective-serv, Sales, Tech-support, Transport-moving. Interpret as a categorical feature.",
+      "race": "Feature name: race. Public type: categorical. Public categorical values: Amer-Indian-Eskimo, Asian-Pac-Islander, Black, Other, White. Interpret as a categorical feature.",
+      "relationship": "Feature name: relationship. Public type: categorical. Public categorical values: Husband, Not-in-family, Other-relative, Own-child, Unmarried, Wife. Interpret as a categorical feature.",
+      "sex": "Feature name: sex. Public type: categorical. Public categorical values: Female, Male. Interpret as a categorical feature.",
+      "workclass": "Feature name: workclass. Public type: categorical. Public categorical values: ?, Federal-gov, Local-gov, Never-worked, Private, Self-emp-inc, Self-emp-not-inc, State-gov, Without-pay. Interpret as a categorical feature."
+    },
+    "privacy_note": "Uses only public task/schema metadata; no rows, empirical statistics, cluster assignments, heterogeneity values, epsilon, K, or random seed.",
+    "task_description": "Predict whether an individual's annual income exceeds 50,000 US dollars. Target definition: Binary label: 1 denotes income greater than 50,000 dollars; 0 denotes income at or below 50,000 dollars",
+    "variant": "basic"
+  },
+  "raw_scores": {
+    "age": 0.7,
+    "capital-gain": 0.9,
+    "capital-loss": 0.4,
+    "education": 0.8,
+    "education-num": 0.8,
+    "fnlwgt": 0.1,
+    "hours-per-week": 0.7,
+    "marital-status": 0.6,
+    "native-country": 0.5,
+    "occupation": 0.7,
+    "race": 0.3,
+    "relationship": 0.4,
+    "sex": 0.5,
+    "workclass": 0.6
+  },
+  "schema_payload_hash": "a558b1c3c8f78f13",
+  "scoring_model": "Qwen/Qwen2.5-14B-Instruct",
+  "variant": "basic"
+}

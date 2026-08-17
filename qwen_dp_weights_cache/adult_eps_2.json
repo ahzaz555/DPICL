@@ -1,0 +1,61 @@
+{
+  "dataset": "Adult",
+  "epsilon": 2.0,
+  "weight_sample_fraction": 0.1,
+  "weight_split_seed": 314159,
+  "summary_seed": 273828,
+  "scoring_model": "Qwen/Qwen2.5-14B-Instruct",
+  "prompt_version": "qwen_dp_summary_weights_v1",
+  "dp_summaries": [
+    {
+      "age": 0.2741796789913461,
+      "fnlwgt": 0.1145696372220594,
+      "education-num": 0.5753819869460505,
+      "capital-gain": 0.002956671709595709,
+      "capital-loss": 0.004604246157551572,
+      "hours-per-week": 0.4106047363837708,
+      "workclass": "Private",
+      "education": "HS-grad",
+      "marital-status": "Never-married",
+      "occupation": "Adm-clerical",
+      "relationship": "Not-in-family",
+      "race": "White",
+      "sex": "Male",
+      "native-country": "United-States",
+      "target": 0
+    },
+    {
+      "age": 0.36998191069715425,
+      "fnlwgt": 0.2407579935210282,
+      "education-num": 0.755961514815909,
+      "capital-gain": 0.027242361259192802,
+      "capital-loss": 0.0,
+      "hours-per-week": 0.4779021275381778,
+      "workclass": "Private",
+      "education": "Bachelors",
+      "marital-status": "Married-civ-spouse",
+      "occupation": "Exec-managerial",
+      "relationship": "Husband",
+      "race": "White",
+      "sex": "Male",
+      "native-country": "United-States",
+      "target": 1
+    }
+  ],
+  "normalized_weights": {
+    "age": 1.438935912938331,
+    "fnlwgt": 0.33857315598548965,
+    "education-num": 1.5235792019347034,
+    "capital-gain": 1.6082224909310756,
+    "capital-loss": 0.42321644498186206,
+    "hours-per-week": 1.3542926239419586,
+    "workclass": 1.015719467956469,
+    "education": 1.5574365175332525,
+    "marital-status": 0.9310761789600965,
+    "occupation": 1.2696493349455862,
+    "relationship": 0.6771463119709793,
+    "race": 0.5078597339782345,
+    "sex": 0.7617896009673517,
+    "native-country": 0.5925030229746069
+  }
+}

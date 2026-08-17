@@ -1,0 +1,225 @@
+{
+  "privacy_note": "Generated only from public task/schema metadata; no private rows or empirical statistics.",
+  "public_payload": {
+    "dataset": "Phishing",
+    "features": [
+      "Feature name: having_IP_Address\nType: categorical\nDescription: Indicates whether the URL uses an IP address instead of a domain name, often used by phishers to hide their identity.",
+      "Feature name: URL_Length\nType: categorical\nDescription: Measures the character length of the URL; phishers often use long URLs to hide the suspicious domain.",
+      "Feature name: Shortining_Service\nType: categorical\nDescription: Indicates whether a URL shortening service (like bit.ly) is used to redirect and hide the true malicious URL.",
+      "Feature name: having_At_Symbol\nType: categorical\nDescription: Indicates whether the URL contains an '@' symbol, which causes the browser to ignore everything preceding it.",
+      "Feature name: double_slash_redirecting\nType: categorical\nDescription: Indicates whether a double slash '//' appears after the initial protocol, a technique used for hidden redirection.",
+      "Feature name: Prefix_Suffix\nType: categorical\nDescription: Indicates whether the domain name includes a hyphen '-', a common technique to make a fake URL look like a legitimate one.",
+      "Feature name: having_Sub_Domain\nType: categorical\nDescription: Evaluates the number of subdomains in the URL; phishing sites often use multiple subdomains to appear legitimate.",
+      "Feature name: SSLfinal_State\nType: categorical\nDescription: Evaluates the HTTPS and SSL certificate's validity, issuer trustworthiness, and age.",
+      "Feature name: Domain_registeration_length\nType: categorical\nDescription: Measures how long the domain has been registered; phishing sites typically have very short registration lifespans.",
+      "Feature name: Favicon\nType: categorical\nDescription: Indicates whether the website's favicon image is loaded from a domain different from the main URL.",
+      "Feature name: port\nType: categorical\nDescription: Indicates whether non-standard network ports are open, which is often a sign of a compromised or malicious server.",
+      "Feature name: HTTPS_token\nType: categorical\nDescription: Indicates whether the string 'https' is deceptively included within the domain part of the URL.",
+      "Feature name: Request_URL\nType: categorical\nDescription: Measures the percentage of external objects (like images or videos) loaded from a different domain.",
+      "Feature name: URL_of_Anchor\nType: categorical\nDescription: Evaluates whether anchor tags link to different domains, do not link to any webpage, or link to the same webpage.",
+      "Feature name: Links_in_tags\nType: categorical\nDescription: Examines the percentage of links within metadata, script, and link HTML tags pointing to external domains.",
+      "Feature name: SFH\nType: categorical\nDescription: Server Form Handler; evaluates if webpage form actions are handled suspiciously (e.g., routed to 'about:blank' or a different domain).",
+      "Feature name: Submitting_to_email\nType: categorical\nDescription: Checks if the website forms submit data directly to an email address (mailto:) instead of a secure server.",
+      "Feature name: Abnormal_URL\nType: categorical\nDescription: Identifies if the host name is not included in the URL based on WHOIS database records.",
+      "Feature name: Redirect\nType: categorical\nDescription: Indicates if the website uses excessive or hidden redirection to route users away from their intended destination.",
+      "Feature name: on_mouseover\nType: categorical\nDescription: Checks if JavaScript is used to alter the status bar to hide the true link destination when a user hovers over it.",
+      "Feature name: RightClick\nType: categorical\nDescription: Indicates if right-clicking is disabled on the page, a tactic used to prevent users from viewing the page source code.",
+      "Feature name: popUpWidnow\nType: categorical\nDescription: Checks if the website generates pop-up windows, especially those containing text fields asking for personal information.",
+      "Feature name: Iframe\nType: categorical\nDescription: Indicates if invisible or borderless iframes are used to load external, potentially malicious content without the user noticing.",
+      "Feature name: age_of_domain\nType: categorical\nDescription: The age of the domain; older domains are usually more trustworthy, whereas phishing domains are recently registered.",
+      "Feature name: DNSRecord\nType: categorical\nDescription: Checks if the domain has a valid DNS record; phishing domains often lack these or are missing from WHOIS databases.",
+      "Feature name: web_traffic\nType: categorical\nDescription: Evaluates the website's popularity and traffic rank (e.g., Alexa rank); phishing sites usually have low or unrecognized traffic.",
+      "Feature name: Page_Rank\nType: categorical\nDescription: Evaluates the importance of the webpage based on its PageRank value; lower scores are highly suspicious.",
+      "Feature name: Google_Index\nType: categorical\nDescription: Checks whether the website is currently indexed by Google; phishing sites are often not indexed.",
+      "Feature name: Links_pointing_to_page\nType: categorical\nDescription: Evaluates how many external links point to the webpage; legitimate sites usually have many incoming links.",
+      "Feature name: Statistical_report\nType: categorical\nDescription: Checks if the website's IP or domain is currently present in recognized phishing statistical reports or blacklists."
+    ],
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "task": "phishing website detection; target classes are ['-1', '1']",
+    "version": "llm_score_v5"
+  },
+  "raw_scores": {
+    "Abnormal_URL": 0.7590000000000001,
+    "DNSRecord": 0.661,
+    "Domain_registeration_length": 0.7590000000000001,
+    "Favicon": 0.4650000000000001,
+    "Google_Index": 0.661,
+    "HTTPS_token": 0.5630000000000001,
+    "Iframe": 0.661,
+    "Links_in_tags": 0.4650000000000001,
+    "Links_pointing_to_page": 0.5630000000000001,
+    "Page_Rank": 0.661,
+    "Prefix_Suffix": 0.5630000000000001,
+    "Redirect": 0.661,
+    "Request_URL": 0.4650000000000001,
+    "RightClick": 0.4650000000000001,
+    "SFH": 0.661,
+    "SSLfinal_State": 0.8660000000000001,
+    "Shortining_Service": 0.6679999999999999,
+    "Statistical_report": 0.8660000000000001,
+    "Submitting_to_email": 0.5630000000000001,
+    "URL_Length": 0.538,
+    "URL_of_Anchor": 0.5630000000000001,
+    "age_of_domain": 0.7590000000000001,
+    "double_slash_redirecting": 0.6359999999999999,
+    "having_At_Symbol": 0.4650000000000001,
+    "having_IP_Address": 0.7670000000000001,
+    "having_Sub_Domain": 0.661,
+    "on_mouseover": 0.5630000000000001,
+    "popUpWidnow": 0.5630000000000001,
+    "port": 0.661,
+    "web_traffic": 0.5630000000000001
+  },
+  "semantic_components": {
+    "Abnormal_URL": {
+      "complementarity": 0.7,
+      "redundancy": 0.2,
+      "relevance": 0.8
+    },
+    "DNSRecord": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "Domain_registeration_length": {
+      "complementarity": 0.7,
+      "redundancy": 0.2,
+      "relevance": 0.8
+    },
+    "Favicon": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.5
+    },
+    "Google_Index": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "HTTPS_token": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "Iframe": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "Links_in_tags": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.5
+    },
+    "Links_pointing_to_page": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "Page_Rank": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "Prefix_Suffix": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "Redirect": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "Request_URL": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.5
+    },
+    "RightClick": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.5
+    },
+    "SFH": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "SSLfinal_State": {
+      "complementarity": 0.8,
+      "redundancy": 0.1,
+      "relevance": 0.9
+    },
+    "Shortining_Service": {
+      "complementarity": 0.6,
+      "redundancy": 0.1,
+      "relevance": 0.7
+    },
+    "Statistical_report": {
+      "complementarity": 0.8,
+      "redundancy": 0.1,
+      "relevance": 0.9
+    },
+    "Submitting_to_email": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "URL_Length": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "URL_of_Anchor": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "age_of_domain": {
+      "complementarity": 0.7,
+      "redundancy": 0.2,
+      "relevance": 0.8
+    },
+    "double_slash_redirecting": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "having_At_Symbol": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.5
+    },
+    "having_IP_Address": {
+      "complementarity": 0.7,
+      "redundancy": 0.1,
+      "relevance": 0.8
+    },
+    "having_Sub_Domain": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "on_mouseover": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "popUpWidnow": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "port": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "web_traffic": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    }
+  }
+}
