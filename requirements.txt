@@ -1,0 +1,28 @@
+# Core numerical / ML stack
+numpy
+pandas
+scikit-learn
+matplotlib
+tqdm
+
+# Deep learning and language models
+torch
+transformers
+accelerate
+bitsandbytes
+huggingface_hub
+
+# Differential privacy / synthesis
+diffprivlib
+smartnoise-synth
+git+https://github.com/ryan112358/private-pgm.git@01f02f17eba440f4e76c1d06fa5ee9eed0bd2bca
+
+# PrivSyn dependencies
+networkx
+PyYAML
+
+# GEM compatibility dependency
+rdt
+
+# Used by the main pipeline / cleanup in the Colab environment
+jax
