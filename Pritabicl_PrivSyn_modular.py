@@ -131,7 +131,6 @@ def build_C3_global_privsyn_pool(train_df, num_cols, cat_cols, cat_domains, eps_
             if label_target_only:
                 if a != 'target' and b != 'target':
                     loader.priv_indif[frozenset([a, b])] = 0.0
-    print('[OFFICIAL PRIVSYN]', 'root:', privsyn_root, '| eps:', eps_total, '| delta:', delta, '| n_synth:', n_synth, '| n_bins:', n_bins, '| attrs:', len(ordered_cols))
     anonymiser = Anonymisation(float(eps_total), float(delta))
     anonymiser.anonymiser(loader)
     consistenter = Consistenter(anonymiser, loader.all_attrs)
@@ -150,7 +149,6 @@ def build_C3_global_privsyn_pool(train_df, num_cols, cat_cols, cat_domains, eps_
         synth_df[c] = [domain_vals[i] for i in ids.to_numpy()]
     synth_df['target'] = pd.to_numeric(synth_encoded['target'], errors='coerce').fillna(0).astype(int).clip(0, 1)
     synth_df = synth_df[ordered_cols].reset_index(drop=True)
-    print('[DEBUG C3_GLOBAL_PRIVSYN official]', 'n_synth:', len(synth_df), 'labels:', synth_df['target'].value_counts().to_dict())
     return synth_df
 
 
@@ -227,7 +225,6 @@ def build_C3_privsyn_icl_all_star(train_df, num_cols, cat_cols, cat_domains,
                 'private_cluster_rows': int(len(df_c)),
             }
         except Exception as exc:
-            print(f'[DP-SAMPLE LLM FALLBACK] cluster={c} error={exc!r}')
             synth_store[c] = fallback[ordered_cols].reset_index(drop=True)
             log[c] = {
                 'used_features': all_features,
