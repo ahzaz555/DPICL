@@ -1,0 +1,116 @@
+{
+  "columns": [
+    {
+      "name": "Age",
+      "type": "continuous",
+      "min": 28.0,
+      "max": 77.0,
+      "description": "The patient's age in years."
+    },
+    {
+      "name": "Sex",
+      "type": "categorical",
+      "i2s": [
+        "F",
+        "M"
+      ],
+      "size": 2,
+      "description": "The patient's biological sex: F for female and M for male."
+    },
+    {
+      "name": "ChestPainType",
+      "type": "categorical",
+      "i2s": [
+        "ASY",
+        "ATA",
+        "NAP",
+        "TA"
+      ],
+      "size": 4,
+      "description": "The type of chest pain: ASY for asymptomatic, ATA for atypical angina, NAP for non-anginal pain, and TA for typical angina."
+    },
+    {
+      "name": "RestingBP",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 200.0,
+      "description": "The patient's resting blood pressure in millimeters of mercury (mm Hg)."
+    },
+    {
+      "name": "Cholesterol",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 603.0,
+      "description": "The patient's serum cholesterol level in milligrams per deciliter (mg/dL)."
+    },
+    {
+      "name": "FastingBS",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "size": 2,
+      "description": "Indicates whether fasting blood sugar exceeds 120 mg/dL: 1 means yes and 0 means no."
+    },
+    {
+      "name": "RestingECG",
+      "type": "categorical",
+      "i2s": [
+        "LVH",
+        "Normal",
+        "ST"
+      ],
+      "size": 3,
+      "description": "The resting electrocardiogram result: LVH indicates left ventricular hypertrophy, Normal indicates no abnormality, and ST indicates an ST-T wave abnormality."
+    },
+    {
+      "name": "MaxHR",
+      "type": "continuous",
+      "min": 60.0,
+      "max": 202.0,
+      "description": "The maximum heart rate achieved during exercise."
+    },
+    {
+      "name": "ExerciseAngina",
+      "type": "categorical",
+      "i2s": [
+        "N",
+        "Y"
+      ],
+      "size": 2,
+      "description": "Indicates whether exercise induced angina: Y means yes and N means no."
+    },
+    {
+      "name": "Oldpeak",
+      "type": "continuous",
+      "min": -2.6,
+      "max": 6.2,
+      "description": "The ST-segment depression induced by exercise relative to rest."
+    },
+    {
+      "name": "ST_Slope",
+      "type": "categorical",
+      "i2s": [
+        "Down",
+        "Flat",
+        "Up"
+      ],
+      "size": 3,
+      "description": "The slope of the peak exercise ST segment: Down, Flat, or Up."
+    },
+    {
+      "name": "HeartDisease",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "size": 2,
+      "description": "The target classification label: 1 indicates the presence of heart disease and 0 indicates no heart disease."
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 734,
+  "label": "HeartDisease"
+}

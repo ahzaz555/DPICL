@@ -1,0 +1,487 @@
+{
+  "columns": [
+    {
+      "name": "Mushroom_quality",
+      "type": "categorical",
+      "i2s": [
+        "e",
+        "p"
+      ],
+      "size": 2,
+      "prompt_name": "mushroom class",
+      "value_labels": {
+        "e": "edible",
+        "p": "poisonous"
+      },
+      "description": "The binary classification target indicating whether the mushroom is edible or poisonous."
+    },
+    {
+      "name": "cap_shape",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "c",
+        "f",
+        "k",
+        "s",
+        "x"
+      ],
+      "size": 6,
+      "prompt_name": "cap shape",
+      "value_labels": {
+        "b": "bell",
+        "c": "conical",
+        "f": "flat",
+        "k": "knobbed",
+        "s": "sunken",
+        "x": "convex"
+      },
+      "description": "The overall shape of the mushroom cap."
+    },
+    {
+      "name": "cap_surface",
+      "type": "categorical",
+      "i2s": [
+        "f",
+        "g",
+        "s",
+        "y"
+      ],
+      "size": 4,
+      "prompt_name": "cap surface",
+      "value_labels": {
+        "f": "fibrous",
+        "g": "grooved",
+        "s": "smooth",
+        "y": "scaly"
+      },
+      "description": "The texture of the mushroom cap surface."
+    },
+    {
+      "name": "cap_color",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "c",
+        "e",
+        "g",
+        "n",
+        "p",
+        "r",
+        "u",
+        "w",
+        "y"
+      ],
+      "size": 10,
+      "prompt_name": "cap color",
+      "value_labels": {
+        "b": "buff",
+        "c": "cinnamon",
+        "e": "red",
+        "g": "gray",
+        "n": "brown",
+        "p": "pink",
+        "r": "green",
+        "u": "purple",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The observed color of the mushroom cap."
+    },
+    {
+      "name": "bruises",
+      "type": "categorical",
+      "i2s": [
+        "f",
+        "t"
+      ],
+      "size": 2,
+      "prompt_name": "bruises",
+      "value_labels": {
+        "f": "absent",
+        "t": "present"
+      },
+      "description": "Whether the mushroom has visible bruises."
+    },
+    {
+      "name": "odor",
+      "type": "categorical",
+      "i2s": [
+        "a",
+        "c",
+        "f",
+        "l",
+        "m",
+        "n",
+        "p",
+        "s",
+        "y"
+      ],
+      "size": 9,
+      "prompt_name": "odor",
+      "value_labels": {
+        "a": "almond",
+        "c": "creosote",
+        "f": "foul",
+        "l": "anise",
+        "m": "musty",
+        "n": "none",
+        "p": "pungent",
+        "s": "spicy",
+        "y": "fishy"
+      },
+      "description": "The odor category of the mushroom."
+    },
+    {
+      "name": "gill_attachment",
+      "type": "categorical",
+      "i2s": [
+        "a",
+        "f"
+      ],
+      "size": 2,
+      "prompt_name": "gill attachment",
+      "value_labels": {
+        "a": "attached",
+        "f": "free"
+      },
+      "description": "How the mushroom gills are attached to the stalk."
+    },
+    {
+      "name": "gill_spacing",
+      "type": "categorical",
+      "i2s": [
+        "c",
+        "w"
+      ],
+      "size": 2,
+      "prompt_name": "gill spacing",
+      "value_labels": {
+        "c": "close",
+        "w": "crowded"
+      },
+      "description": "The spacing between the mushroom gills."
+    },
+    {
+      "name": "gill_size",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "n"
+      ],
+      "size": 2,
+      "prompt_name": "gill size",
+      "value_labels": {
+        "b": "broad",
+        "n": "narrow"
+      },
+      "description": "The relative size of the mushroom gills."
+    },
+    {
+      "name": "gill_color",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "e",
+        "g",
+        "h",
+        "k",
+        "n",
+        "o",
+        "p",
+        "r",
+        "u",
+        "w",
+        "y"
+      ],
+      "size": 12,
+      "prompt_name": "gill color",
+      "value_labels": {
+        "b": "buff",
+        "e": "red",
+        "g": "gray",
+        "h": "chocolate",
+        "k": "black",
+        "n": "brown",
+        "o": "orange",
+        "p": "pink",
+        "r": "green",
+        "u": "purple",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The observed color of the mushroom gills."
+    },
+    {
+      "name": "stalkshape",
+      "type": "categorical",
+      "i2s": [
+        "e",
+        "t"
+      ],
+      "size": 2,
+      "prompt_name": "stalk shape",
+      "value_labels": {
+        "e": "enlarging",
+        "t": "tapering"
+      },
+      "description": "The overall shape of the mushroom stalk."
+    },
+    {
+      "name": "stalk_root",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "c",
+        "e",
+        "r",
+        "unknown"
+      ],
+      "size": 5,
+      "prompt_name": "stalk root",
+      "value_labels": {
+        "b": "bulbous",
+        "c": "club",
+        "e": "equal",
+        "r": "rooted",
+        "unknown": "unknown"
+      },
+      "description": "The root structure at the base of the stalk. Unknown denotes a missing value in the original dataset."
+    },
+    {
+      "name": "stalk_surface_above_ring",
+      "type": "categorical",
+      "i2s": [
+        "f",
+        "k",
+        "s",
+        "y"
+      ],
+      "size": 4,
+      "prompt_name": "stalk surface above ring",
+      "value_labels": {
+        "f": "fibrous",
+        "k": "silky",
+        "s": "smooth",
+        "y": "scaly"
+      },
+      "description": "The texture of the stalk surface above the mushroom ring."
+    },
+    {
+      "name": "stalk_surface_below_ring",
+      "type": "categorical",
+      "i2s": [
+        "f",
+        "k",
+        "s",
+        "y"
+      ],
+      "size": 4,
+      "prompt_name": "stalk surface below ring",
+      "value_labels": {
+        "f": "fibrous",
+        "k": "silky",
+        "s": "smooth",
+        "y": "scaly"
+      },
+      "description": "The texture of the stalk surface below the mushroom ring."
+    },
+    {
+      "name": "stalk_color_above_ring",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "c",
+        "e",
+        "g",
+        "n",
+        "o",
+        "p",
+        "w",
+        "y"
+      ],
+      "size": 9,
+      "prompt_name": "stalk color above ring",
+      "value_labels": {
+        "b": "buff",
+        "c": "cinnamon",
+        "e": "red",
+        "g": "gray",
+        "n": "brown",
+        "o": "orange",
+        "p": "pink",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The observed color of the stalk above the mushroom ring."
+    },
+    {
+      "name": "stalk_color_below_ring",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "c",
+        "e",
+        "g",
+        "n",
+        "o",
+        "p",
+        "w",
+        "y"
+      ],
+      "size": 9,
+      "prompt_name": "stalk color below ring",
+      "value_labels": {
+        "b": "buff",
+        "c": "cinnamon",
+        "e": "red",
+        "g": "gray",
+        "n": "brown",
+        "o": "orange",
+        "p": "pink",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The observed color of the stalk below the mushroom ring."
+    },
+    {
+      "name": "veil_color",
+      "type": "categorical",
+      "i2s": [
+        "n",
+        "o",
+        "w",
+        "y"
+      ],
+      "size": 4,
+      "prompt_name": "veil color",
+      "value_labels": {
+        "n": "brown",
+        "o": "orange",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The observed color of the mushroom veil."
+    },
+    {
+      "name": "ring_number",
+      "type": "categorical",
+      "i2s": [
+        "n",
+        "o",
+        "t"
+      ],
+      "size": 3,
+      "prompt_name": "number of rings",
+      "value_labels": {
+        "n": "none",
+        "o": "one",
+        "t": "two"
+      },
+      "description": "The number of rings present on the mushroom stalk."
+    },
+    {
+      "name": "ring_type",
+      "type": "categorical",
+      "i2s": [
+        "e",
+        "f",
+        "l",
+        "n",
+        "p"
+      ],
+      "size": 5,
+      "prompt_name": "ring type",
+      "value_labels": {
+        "e": "evanescent",
+        "f": "flaring",
+        "l": "large",
+        "n": "none",
+        "p": "pendant"
+      },
+      "description": "The structural type of the ring on the mushroom stalk."
+    },
+    {
+      "name": "spore_print_color",
+      "type": "categorical",
+      "i2s": [
+        "b",
+        "h",
+        "k",
+        "n",
+        "o",
+        "r",
+        "u",
+        "w",
+        "y"
+      ],
+      "size": 9,
+      "prompt_name": "spore print color",
+      "value_labels": {
+        "b": "buff",
+        "h": "chocolate",
+        "k": "black",
+        "n": "brown",
+        "o": "orange",
+        "r": "green",
+        "u": "purple",
+        "w": "white",
+        "y": "yellow"
+      },
+      "description": "The color produced by the mushroom spore print."
+    },
+    {
+      "name": "population",
+      "type": "categorical",
+      "i2s": [
+        "a",
+        "c",
+        "n",
+        "s",
+        "v",
+        "y"
+      ],
+      "size": 6,
+      "prompt_name": "population pattern",
+      "value_labels": {
+        "a": "abundant",
+        "c": "clustered",
+        "n": "numerous",
+        "s": "scattered",
+        "v": "several",
+        "y": "solitary"
+      },
+      "description": "The population pattern in which the mushroom grows."
+    },
+    {
+      "name": "habitat",
+      "type": "categorical",
+      "i2s": [
+        "d",
+        "g",
+        "l",
+        "m",
+        "p",
+        "u",
+        "w"
+      ],
+      "size": 7,
+      "prompt_name": "habitat",
+      "value_labels": {
+        "d": "woods",
+        "g": "grasses",
+        "l": "leaves",
+        "m": "meadows",
+        "p": "paths",
+        "u": "urban areas",
+        "w": "waste areas"
+      },
+      "description": "The habitat where the mushroom was observed."
+    }
+  ],
+  "task": "binary_classification",
+  "train_size": 4874,
+  "val_size": 1625,
+  "test_size": 1625,
+  "label": "Mushroom_quality"
+}

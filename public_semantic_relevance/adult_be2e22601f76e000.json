@@ -1,0 +1,113 @@
+{
+  "privacy_note": "Generated only from public task/schema metadata; no private rows or empirical statistics.",
+  "public_payload": {
+    "dataset": "Adult",
+    "features": [
+      "Feature name: age\nType: continuous\nDescription: The individual's age.\nReal-World Range: [17 to 90] years",
+      "Feature name: fnlwgt\nType: continuous\nDescription: The Census final sampling weight. It estimates how many people in the population are represented by this record; it is not personal income or wealth.\nReal-World Range: [12285 to 1484705] people",
+      "Feature name: education-num\nType: continuous\nDescription: An ordered numeric encoding of educational attainment. Larger values represent higher education levels.\nReal-World Range: [1 to 16] scale (1-16)",
+      "Feature name: capital-gain\nType: continuous\nDescription: Reported amount of capital gain. This is a financial-income-related attribute relevant to income classification.\nReal-World Range: [0 to 99999] US dollars",
+      "Feature name: capital-loss\nType: continuous\nDescription: Reported amount of capital loss. This is a financial attribute describing capital losses.\nReal-World Range: [0 to 4356] US dollars",
+      "Feature name: hours-per-week\nType: continuous\nDescription: The typical number of hours the individual works per week.\nReal-World Range: [1 to 99] hours/week",
+      "Feature name: workclass\nType: categorical\nDescription: The individual's employment sector or work arrangement.\nValue Meanings: {\"?\": \"Unknown/Missing\", \"Federal-gov\": \"Federal Government\", \"Local-gov\": \"Local Government\", \"Never-worked\": \"Never Worked\", \"Private\": \"Private Sector\", \"Self-emp-inc\": \"Self-Employed (Incorporated)\", \"Self-emp-not-inc\": \"Self-Employed (Not Incorporated)\", \"State-gov\": \"State Government\", \"Without-pay\": \"Without Pay\"}",
+      "Feature name: education\nType: categorical\nDescription: The highest educational qualification or grade level completed by the individual.\nValue Meanings: {\"10th\": \"10th Grade\", \"11th\": \"11th Grade\", \"12th\": \"12th Grade\", \"1st-4th\": \"1st to 4th Grade\", \"5th-6th\": \"5th to 6th Grade\", \"7th-8th\": \"7th to 8th Grade\", \"9th\": \"9th Grade\", \"Assoc-acdm\": \"Associate Degree (Academic)\", \"Assoc-voc\": \"Associate Degree (Vocational)\", \"Bachelors\": \"Bachelor's Degree\", \"Doctorate\": \"Doctorate Degree\", \"HS-grad\": \"High School Graduate\", \"Masters\": \"Master's Degree\", \"Preschool\": \"Preschool\", \"Prof-school\": \"Professional School\", \"Some-college\": \"Some College\"}",
+      "Feature name: marital-status\nType: categorical\nDescription: The individual's current marital-status category.\nValue Meanings: {\"Divorced\": \"Divorced\", \"Married-AF-spouse\": \"Married to Armed Forces Spouse\", \"Married-civ-spouse\": \"Married to Civilian Spouse\", \"Married-spouse-absent\": \"Married (Spouse Absent)\", \"Never-married\": \"Never Married\", \"Separated\": \"Separated\", \"Widowed\": \"Widowed\"}",
+      "Feature name: occupation\nType: categorical\nDescription: The individual's occupation or main type of work.\nValue Meanings: {\"?\": \"Unknown/Missing\", \"Adm-clerical\": \"Administrative/Clerical\", \"Armed-Forces\": \"Armed Forces\", \"Craft-repair\": \"Craft/Repair\", \"Exec-managerial\": \"Executive/Managerial\", \"Farming-fishing\": \"Farming/Fishing\", \"Handlers-cleaners\": \"Handlers/Cleaners\", \"Machine-op-inspct\": \"Machine Operator/Inspector\", \"Other-service\": \"Other Service\", \"Priv-house-serv\": \"Private House Service\", \"Prof-specialty\": \"Professional Specialty\", \"Protective-serv\": \"Protective Service\", \"Sales\": \"Sales\", \"Tech-support\": \"Tech Support\", \"Transport-moving\": \"Transport/Moving\"}",
+      "Feature name: relationship\nType: categorical\nDescription: The individual's role or relationship within the household.\nValue Meanings: {\"Husband\": \"Husband\", \"Not-in-family\": \"Not in family\", \"Other-relative\": \"Other relative\", \"Own-child\": \"Own child\", \"Unmarried\": \"Unmarried\", \"Wife\": \"Wife\"}",
+      "Feature name: race\nType: categorical\nDescription: The race category recorded for the individual.\nValue Meanings: {\"Amer-Indian-Eskimo\": \"American Indian / Eskimo\", \"Asian-Pac-Islander\": \"Asian / Pacific Islander\", \"Black\": \"Black\", \"Other\": \"Other\", \"White\": \"White\"}",
+      "Feature name: sex\nType: categorical\nDescription: The sex category recorded for the individual.\nValue Meanings: {\"Female\": \"Female\", \"Male\": \"Male\"}",
+      "Feature name: native-country\nType: categorical\nDescription: The individual's reported country of birth or origin.\nValue Meanings: {\"?\": \"Unknown/Missing\", \"Cambodia\": \"Cambodia\", \"Canada\": \"Canada\", \"China\": \"China\", \"Columbia\": \"Colombia\", \"Cuba\": \"Cuba\", \"Dominican-Republic\": \"Dominican Republic\", \"Ecuador\": \"Ecuador\", \"El-Salvador\": \"El Salvador\", \"England\": \"England\", \"France\": \"France\", \"Germany\": \"Germany\", \"Greece\": \"Greece\", \"Guatemala\": \"Guatemala\", \"Haiti\": \"Haiti\", \"Holand-Netherlands\": \"Netherlands\", \"Honduras\": \"Honduras\", \"Hong\": \"Hong Kong\", \"Hungary\": \"Hungary\", \"India\": \"India\", \"Iran\": \"Iran\", \"Ireland\": \"Ireland\", \"Italy\": \"Italy\", \"Jamaica\": \"Jamaica\", \"Japan\": \"Japan\", \"Laos\": \"Laos\", \"Mexico\": \"Mexico\", \"Nicaragua\": \"Nicaragua\", \"Outlying-US(Guam-USVI-etc)\": \"Outlying US Territories\", \"Peru\": \"Peru\", \"Philippines\": \"Philippines\", \"Poland\": \"Poland\", \"Portugal\": \"Portugal\", \"Puerto-Rico\": \"Puerto Rico\", \"Scotland\": \"Scotland\", \"South\": \"South Korea\", \"Taiwan\": \"Taiwan\", \"Thailand\": \"Thailand\", \"Trinadad&Tobago\": \"Trinidad & Tobago\", \"United-States\": \"United States\", \"Vietnam\": \"Vietnam\", \"Yugoslavia\": \"Yugoslavia\"}"
+    ],
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "task": "income prediction; target classes are ['<=50K', '>50K']",
+    "version": "llm_score_v5"
+  },
+  "raw_scores": {
+    "age": 0.7750000000000001,
+    "capital-gain": 0.8660000000000001,
+    "capital-loss": 0.7670000000000001,
+    "education": 0.7030000000000001,
+    "education-num": 0.8070000000000002,
+    "fnlwgt": 0.1,
+    "hours-per-week": 0.6749999999999999,
+    "marital-status": 0.575,
+    "native-country": 0.575,
+    "occupation": 0.7750000000000001,
+    "race": 0.47500000000000003,
+    "relationship": 0.375,
+    "sex": 0.6749999999999999,
+    "workclass": 0.6749999999999999
+  },
+  "semantic_components": {
+    "age": {
+      "complementarity": 0.7,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "capital-gain": {
+      "complementarity": 0.8,
+      "redundancy": 0.1,
+      "relevance": 0.9
+    },
+    "capital-loss": {
+      "complementarity": 0.7,
+      "redundancy": 0.1,
+      "relevance": 0.8
+    },
+    "education": {
+      "complementarity": 0.4,
+      "redundancy": 0.8,
+      "relevance": 0.9
+    },
+    "education-num": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.9
+    },
+    "fnlwgt": {
+      "complementarity": 0.1,
+      "redundancy": 0.0,
+      "relevance": 0.1
+    },
+    "hours-per-week": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "marital-status": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.6
+    },
+    "native-country": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.6
+    },
+    "occupation": {
+      "complementarity": 0.7,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "race": {
+      "complementarity": 0.4,
+      "redundancy": 0.0,
+      "relevance": 0.5
+    },
+    "relationship": {
+      "complementarity": 0.3,
+      "redundancy": 0.0,
+      "relevance": 0.4
+    },
+    "sex": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "workclass": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    }
+  }
+}

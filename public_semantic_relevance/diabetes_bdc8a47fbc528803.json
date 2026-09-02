@@ -1,0 +1,162 @@
+{
+  "privacy_note": "Generated only from public task/schema metadata; no private rows or empirical statistics.",
+  "public_payload": {
+    "dataset": "Diabetes",
+    "features": [
+      "Feature name: HighBP\nType: binary indicator\nDescription: Binary indicator: whether the individual has been told by a health professional that they have high blood pressure (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: HighChol\nType: binary indicator\nDescription: Binary indicator: whether the individual has been told by a health professional that their blood cholesterol is high (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: CholCheck\nType: binary indicator\nDescription: Binary indicator: whether the individual had a cholesterol check within the past five years (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: BMI\nType: continuous\nDescription: The Body Mass Index (BMI) of the individual, an indicator of body fat based on height and weight.\nReal-World Range: [12.0 to 98.0]",
+      "Feature name: Smoker\nType: binary indicator\nDescription: Binary indicator: whether the individual has smoked at least 100 cigarettes in their lifetime (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: Stroke\nType: binary indicator\nDescription: Binary indicator: whether the individual has ever been told they had a stroke (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: HeartDiseaseorAttack\nType: binary indicator\nDescription: Binary indicator: whether the individual has reported coronary heart disease or myocardial infarction/heart attack (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: PhysActivity\nType: binary indicator\nDescription: Binary indicator: whether the individual engaged in physical activity or exercise in the past 30 days, excluding their regular job (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: Fruits\nType: binary indicator\nDescription: Binary indicator: whether the individual consumes fruit one or more times per day (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: Veggies\nType: binary indicator\nDescription: Binary indicator: whether the individual consumes vegetables one or more times per day (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: HvyAlcoholConsump\nType: binary indicator\nDescription: Binary indicator: heavy alcohol consumption according to the dataset/codebook definition (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: AnyHealthcare\nType: binary indicator\nDescription: Binary indicator: whether the individual has any kind of health-care coverage (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: NoDocbcCost\nType: binary indicator\nDescription: Binary indicator: whether the individual needed to see a doctor in the past 12 months but could not because of cost (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: GenHlth\nType: ordinal\nDescription: Ordinal self-rated general-health category on a 1-to-5 scale, where 1 = excellent and 5 = poor.\nReal-World Range: [1.0 to 5.0]",
+      "Feature name: MentHlth\nType: count\nDescription: Count of days in the past 30 days on which the individual reported poor mental health.\nReal-World Range: [0.0 to 30.0]",
+      "Feature name: PhysHlth\nType: count\nDescription: Count of days in the past 30 days on which the individual reported poor physical health.\nReal-World Range: [0.0 to 30.0]",
+      "Feature name: DiffWalk\nType: binary indicator\nDescription: Binary indicator: whether the individual has serious difficulty walking or climbing stairs (0 = no, 1 = yes).\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: Sex\nType: binary categorical\nDescription: Binary-coded sex attribute: 0 = female, 1 = male.\nReal-World Range: [0.0 to 1.0]",
+      "Feature name: Age\nType: ordinal\nDescription: Ordinal age-group category with 13 ordered levels (for example, 1 = age 18-24 and 13 = age 80 or older).\nReal-World Range: [1.0 to 13.0]",
+      "Feature name: Education\nType: ordinal\nDescription: Ordinal education-level category on a 1-to-6 scale, from lower educational attainment to college education or more.\nReal-World Range: [1.0 to 6.0]",
+      "Feature name: Income\nType: ordinal\nDescription: Ordinal household-income category on a 1-to-8 scale, from lower to higher income brackets.\nReal-World Range: [1.0 to 8.0]"
+    ],
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "task": "diabetes risk prediction; target classes are ['0', '1']",
+    "version": "llm_score_v5"
+  },
+  "raw_scores": {
+    "Age": 0.6679999999999999,
+    "AnyHealthcare": 0.37100000000000005,
+    "BMI": 0.7570000000000001,
+    "CholCheck": 0.557,
+    "DiffWalk": 0.47000000000000003,
+    "Education": 0.47000000000000003,
+    "Fruits": 0.47000000000000003,
+    "GenHlth": 0.661,
+    "HeartDiseaseorAttack": 0.8660000000000001,
+    "HighBP": 0.7670000000000001,
+    "HighChol": 0.7340000000000001,
+    "HvyAlcoholConsump": 0.5630000000000001,
+    "Income": 0.37100000000000005,
+    "MentHlth": 0.5630000000000001,
+    "NoDocbcCost": 0.272,
+    "PhysActivity": 0.5630000000000001,
+    "PhysHlth": 0.5630000000000001,
+    "Sex": 0.37100000000000005,
+    "Smoker": 0.6679999999999999,
+    "Stroke": 0.7670000000000001,
+    "Veggies": 0.47000000000000003
+  },
+  "semantic_components": {
+    "Age": {
+      "complementarity": 0.6,
+      "redundancy": 0.1,
+      "relevance": 0.7
+    },
+    "AnyHealthcare": {
+      "complementarity": 0.3,
+      "redundancy": 0.1,
+      "relevance": 0.4
+    },
+    "BMI": {
+      "complementarity": 0.4,
+      "redundancy": 0.2,
+      "relevance": 0.9
+    },
+    "CholCheck": {
+      "complementarity": 0.5,
+      "redundancy": 0.3,
+      "relevance": 0.6
+    },
+    "DiffWalk": {
+      "complementarity": 0.4,
+      "redundancy": 0.1,
+      "relevance": 0.5
+    },
+    "Education": {
+      "complementarity": 0.4,
+      "redundancy": 0.1,
+      "relevance": 0.5
+    },
+    "Fruits": {
+      "complementarity": 0.4,
+      "redundancy": 0.1,
+      "relevance": 0.5
+    },
+    "GenHlth": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.7
+    },
+    "HeartDiseaseorAttack": {
+      "complementarity": 0.8,
+      "redundancy": 0.1,
+      "relevance": 0.9
+    },
+    "HighBP": {
+      "complementarity": 0.7,
+      "redundancy": 0.1,
+      "relevance": 0.8
+    },
+    "HighChol": {
+      "complementarity": 0.6,
+      "redundancy": 0.2,
+      "relevance": 0.8
+    },
+    "HvyAlcoholConsump": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "Income": {
+      "complementarity": 0.3,
+      "redundancy": 0.1,
+      "relevance": 0.4
+    },
+    "MentHlth": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "NoDocbcCost": {
+      "complementarity": 0.2,
+      "redundancy": 0.1,
+      "relevance": 0.3
+    },
+    "PhysActivity": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "PhysHlth": {
+      "complementarity": 0.5,
+      "redundancy": 0.2,
+      "relevance": 0.6
+    },
+    "Sex": {
+      "complementarity": 0.3,
+      "redundancy": 0.1,
+      "relevance": 0.4
+    },
+    "Smoker": {
+      "complementarity": 0.6,
+      "redundancy": 0.1,
+      "relevance": 0.7
+    },
+    "Stroke": {
+      "complementarity": 0.7,
+      "redundancy": 0.1,
+      "relevance": 0.8
+    },
+    "Veggies": {
+      "complementarity": 0.4,
+      "redundancy": 0.1,
+      "relevance": 0.5
+    }
+  }
+}

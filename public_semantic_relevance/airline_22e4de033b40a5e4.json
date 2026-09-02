@@ -1,0 +1,169 @@
+{
+  "privacy_note": "Generated only from public task/schema metadata; no private rows or empirical statistics.",
+  "public_payload": {
+    "dataset": "Airline",
+    "features": [
+      "Feature name: Age\nType: continuous\nDescription: The age of the passenger in years.\nReal-World Range: [7.0 to 85.0]",
+      "Feature name: Flight Distance\nType: continuous\nDescription: The flight distance in miles.\nReal-World Range: [31.0 to 4983.0]",
+      "Feature name: Departure Delay in Minutes\nType: continuous\nDescription: The departure delay in minutes.\nReal-World Range: [0.0 to 1592.0]",
+      "Feature name: Arrival Delay in Minutes\nType: continuous\nDescription: The arrival delay in minutes.\nReal-World Range: [0.0 to 1584.0]",
+      "Feature name: Inflight wifi service\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of inflight Wi-Fi service on the dataset-defined 0-to-5 scale.",
+      "Feature name: Departure/Arrival time convenient\nType: ordinal rating\nDescription: Schedule/airport-convenience rating: passenger rating of departure and arrival time convenience on the dataset-defined 0-to-5 scale.",
+      "Feature name: Ease of Online booking\nType: ordinal rating\nDescription: Digital/pre-flight experience rating: passenger rating of the online booking experience on the dataset-defined 0-to-5 scale.",
+      "Feature name: Gate location\nType: ordinal rating\nDescription: Airport/boarding experience rating: passenger rating of gate-location convenience on the dataset-defined 0-to-5 scale.",
+      "Feature name: Food and drink\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of inflight food and drink quality on the dataset-defined 0-to-5 scale.",
+      "Feature name: Online boarding\nType: ordinal rating\nDescription: Digital/pre-flight experience rating: passenger rating of the online boarding process on the dataset-defined 0-to-5 scale.",
+      "Feature name: Seat comfort\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of seat comfort on the dataset-defined 0-to-5 scale.",
+      "Feature name: Inflight entertainment\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of inflight entertainment on the dataset-defined 0-to-5 scale.",
+      "Feature name: On-board service\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of overall on-board service on the dataset-defined 0-to-5 scale.",
+      "Feature name: Leg room service\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of leg-room service on the dataset-defined 0-to-5 scale.",
+      "Feature name: Baggage handling\nType: ordinal rating\nDescription: Airport/boarding experience rating: passenger rating of baggage handling on the dataset-defined 1-to-5 scale.",
+      "Feature name: Checkin service\nType: ordinal rating\nDescription: Airport/boarding experience rating: passenger rating of check-in service on the dataset-defined 0-to-5 scale.",
+      "Feature name: Inflight service\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of inflight service on the dataset-defined 0-to-5 scale.",
+      "Feature name: Cleanliness\nType: ordinal rating\nDescription: Inflight service-experience rating: passenger rating of aircraft cleanliness on the dataset-defined 0-to-5 scale.",
+      "Feature name: Gender\nType: categorical\nDescription: Passenger demographic attribute: biological/recorded gender of the passenger.",
+      "Feature name: Customer Type\nType: categorical\nDescription: Customer relationship attribute: the passenger loyalty status.",
+      "Feature name: Type of Travel\nType: categorical\nDescription: Trip-context attribute: the purpose of the passenger's flight (business or personal travel).",
+      "Feature name: Class\nType: categorical\nDescription: Trip-context attribute: the travel class selected by the passenger."
+    ],
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "task": "passenger satisfaction prediction; target classes are ['neutral or dissatisfied', 'satisfied']",
+    "version": "llm_score_v5"
+  },
+  "raw_scores": {
+    "Age": 0.175,
+    "Arrival Delay in Minutes": 0.52,
+    "Baggage handling": 0.6499999999999999,
+    "Checkin service": 0.6499999999999999,
+    "Class": 0.55,
+    "Cleanliness": 0.75,
+    "Customer Type": 0.375,
+    "Departure Delay in Minutes": 0.55,
+    "Departure/Arrival time convenient": 0.6499999999999999,
+    "Ease of Online booking": 0.6499999999999999,
+    "Flight Distance": 0.275,
+    "Food and drink": 0.75,
+    "Gate location": 0.45,
+    "Gender": 0.1,
+    "Inflight entertainment": 0.75,
+    "Inflight service": 0.75,
+    "Inflight wifi service": 0.75,
+    "Leg room service": 0.6499999999999999,
+    "On-board service": 0.75,
+    "Online boarding": 0.6499999999999999,
+    "Seat comfort": 0.75,
+    "Type of Travel": 0.45
+  },
+  "semantic_components": {
+    "Age": {
+      "complementarity": 0.1,
+      "redundancy": 0.0,
+      "relevance": 0.2
+    },
+    "Arrival Delay in Minutes": {
+      "complementarity": 0.4,
+      "redundancy": 0.5,
+      "relevance": 0.6
+    },
+    "Baggage handling": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "Checkin service": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "Class": {
+      "complementarity": 0.4,
+      "redundancy": 0.0,
+      "relevance": 0.6
+    },
+    "Cleanliness": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Customer Type": {
+      "complementarity": 0.3,
+      "redundancy": 0.0,
+      "relevance": 0.4
+    },
+    "Departure Delay in Minutes": {
+      "complementarity": 0.4,
+      "redundancy": 0.0,
+      "relevance": 0.6
+    },
+    "Departure/Arrival time convenient": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "Ease of Online booking": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "Flight Distance": {
+      "complementarity": 0.2,
+      "redundancy": 0.0,
+      "relevance": 0.3
+    },
+    "Food and drink": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Gate location": {
+      "complementarity": 0.3,
+      "redundancy": 0.0,
+      "relevance": 0.5
+    },
+    "Gender": {
+      "complementarity": 0.1,
+      "redundancy": 0.0,
+      "relevance": 0.1
+    },
+    "Inflight entertainment": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Inflight service": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Inflight wifi service": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Leg room service": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "On-board service": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Online boarding": {
+      "complementarity": 0.5,
+      "redundancy": 0.0,
+      "relevance": 0.7
+    },
+    "Seat comfort": {
+      "complementarity": 0.6,
+      "redundancy": 0.0,
+      "relevance": 0.8
+    },
+    "Type of Travel": {
+      "complementarity": 0.3,
+      "redundancy": 0.0,
+      "relevance": 0.5
+    }
+  }
+}

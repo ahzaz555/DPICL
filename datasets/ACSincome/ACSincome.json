@@ -1,0 +1,233 @@
+{
+  "columns": [
+    {
+      "name": "AGEP",
+      "type": "continuous",
+      "min": 17,
+      "max": 95,
+      "unit": "years",
+      "description": "Age of the individual."
+    },
+    {
+      "name": "COW",
+      "type": "categorical",
+      "size": 8,
+      "i2s": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "value_labels": {
+        "1": "Employee of a private, for-profit company or business",
+        "2": "Employee of a private not-for-profit, tax-exempt, or charitable organization",
+        "3": "Local government employee",
+        "4": "State government employee",
+        "5": "Federal government employee",
+        "6": "Self-employed in own not incorporated business or professional practice",
+        "7": "Self-employed in own incorporated business or professional practice",
+        "8": "Working without pay in a family business or farm"
+      },
+      "description": "Class of worker, describing the ownership/type of the employing organization or self-employment status."
+    },
+    {
+      "name": "SCHL",
+      "type": "categorical",
+      "size": 24,
+      "i2s": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "value_labels": {
+        "1": "No schooling completed",
+        "2": "Nursery school or preschool",
+        "3": "Kindergarten",
+        "4": "Grade 1",
+        "5": "Grade 2",
+        "6": "Grade 3",
+        "7": "Grade 4",
+        "8": "Grade 5",
+        "9": "Grade 6",
+        "10": "Grade 7",
+        "11": "Grade 8",
+        "12": "Grade 9",
+        "13": "Grade 10",
+        "14": "Grade 11",
+        "15": "Grade 12, no diploma",
+        "16": "Regular high school diploma",
+        "17": "GED or alternative credential",
+        "18": "Some college, less than 1 year",
+        "19": "Some college, 1 or more years, no degree",
+        "20": "Associate's degree",
+        "21": "Bachelor's degree",
+        "22": "Master's degree",
+        "23": "Professional degree beyond a bachelor's degree",
+        "24": "Doctorate degree"
+      },
+      "description": "Highest level of educational attainment completed by the individual."
+    },
+    {
+      "name": "MAR",
+      "type": "categorical",
+      "size": 5,
+      "i2s": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "value_labels": {
+        "1": "Married",
+        "2": "Widowed",
+        "3": "Divorced",
+        "4": "Separated",
+        "5": "Never married or under 15 years old"
+      },
+      "description": "Marital status of the individual."
+    },
+    {
+      "name": "RELP",
+      "type": "categorical",
+      "size": 18,
+      "i2s": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "value_labels": {
+        "0": "Reference person",
+        "1": "Husband or wife",
+        "2": "Biological son or daughter",
+        "3": "Adopted son or daughter",
+        "4": "Stepson or stepdaughter",
+        "5": "Brother or sister",
+        "6": "Father or mother",
+        "7": "Grandchild",
+        "8": "Parent-in-law",
+        "9": "Son-in-law or daughter-in-law",
+        "10": "Other relative",
+        "11": "Roomer or boarder",
+        "12": "Housemate or roommate",
+        "13": "Unmarried partner",
+        "14": "Foster child",
+        "15": "Other nonrelative",
+        "16": "Institutionalized group quarters population",
+        "17": "Noninstitutionalized group quarters population"
+      },
+      "description": "Relationship of the individual to the household reference person, including group-quarters categories."
+    },
+    {
+      "name": "WKHP",
+      "type": "continuous",
+      "min": 1,
+      "max": 99,
+      "unit": "hours/week",
+      "description": "Usual number of hours worked per week over the past 12 months."
+    },
+    {
+      "name": "SEX",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        1,
+        2
+      ],
+      "value_labels": {
+        "1": "Male",
+        "2": "Female"
+      },
+      "description": "Sex category recorded for the individual."
+    },
+    {
+      "name": "RAC1P",
+      "type": "categorical",
+      "size": 9,
+      "i2s": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "value_labels": {
+        "1": "White alone",
+        "2": "Black or African American alone",
+        "3": "American Indian alone",
+        "4": "Alaska Native alone",
+        "5": "American Indian and Alaska Native tribes specified; or American Indian/Alaska Native not specified and no other races",
+        "6": "Asian alone",
+        "7": "Native Hawaiian and Other Pacific Islander alone",
+        "8": "Some other race alone",
+        "9": "Two or more races"
+      },
+      "description": "Primary recoded race category of the individual."
+    },
+    {
+      "name": "label",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        0,
+        1
+      ],
+      "value_labels": {
+        "0": "Annual personal income is at most $50,000",
+        "1": "Annual personal income is greater than $50,000"
+      },
+      "description": "Binary income target derived from personal income: 1 indicates income above $50,000 and 0 otherwise."
+    }
+  ],
+  "task": "binary_classification",
+  "task_description": "Predict whether an individual's annual income exceeds $50,000 using demographic, education, household, and employment attributes.",
+  "train_size": 64328,
+  "val_size": 16082,
+  "test_size": 20103,
+  "label": "label",
+  "positive_label": 1
+}

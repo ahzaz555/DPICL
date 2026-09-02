@@ -1,0 +1,241 @@
+{
+  "columns": [
+    {
+      "name": "age",
+      "type": "continuous",
+      "min": 17.0,
+      "max": 98.0,
+      "description": "The age of the bank client in years."
+    },
+    {
+      "name": "job",
+      "type": "categorical",
+      "i2s": [
+        "admin.",
+        "blue-collar",
+        "entrepreneur",
+        "housemaid",
+        "management",
+        "retired",
+        "self-employed",
+        "services",
+        "student",
+        "technician",
+        "unemployed",
+        "unknown"
+      ],
+      "description": "The occupation or employment category of the bank client.",
+      "size": 12
+    },
+    {
+      "name": "marital",
+      "type": "categorical",
+      "i2s": [
+        "divorced",
+        "married",
+        "single",
+        "unknown"
+      ],
+      "description": "The marital status of the bank client.",
+      "size": 4
+    },
+    {
+      "name": "education",
+      "type": "categorical",
+      "i2s": [
+        "basic.4y",
+        "basic.6y",
+        "basic.9y",
+        "high.school",
+        "illiterate",
+        "professional.course",
+        "university.degree",
+        "unknown"
+      ],
+      "description": "The highest reported education level of the bank client.",
+      "size": 8
+    },
+    {
+      "name": "default",
+      "type": "categorical",
+      "i2s": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "description": "Indicates whether the client has credit in default.",
+      "size": 3
+    },
+    {
+      "name": "housing",
+      "type": "categorical",
+      "i2s": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "description": "Indicates whether the client has a housing loan.",
+      "size": 3
+    },
+    {
+      "name": "loan",
+      "type": "categorical",
+      "i2s": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "description": "Indicates whether the client has a personal loan.",
+      "size": 3
+    },
+    {
+      "name": "contact",
+      "type": "categorical",
+      "i2s": [
+        "cellular",
+        "telephone"
+      ],
+      "description": "The communication method used for the most recent contact with the client.",
+      "size": 2
+    },
+    {
+      "name": "month",
+      "type": "categorical",
+      "i2s": [
+        "apr",
+        "aug",
+        "dec",
+        "jul",
+        "jun",
+        "mar",
+        "may",
+        "nov",
+        "oct",
+        "sep"
+      ],
+      "description": "The month in which the most recent marketing contact occurred.",
+      "size": 10
+    },
+    {
+      "name": "day_of_week",
+      "type": "categorical",
+      "i2s": [
+        "fri",
+        "mon",
+        "thu",
+        "tue",
+        "wed"
+      ],
+      "description": "The day of the week on which the most recent marketing contact occurred.",
+      "size": 5
+    },
+    {
+      "name": "duration",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 4918.0,
+      "description": "The duration of the most recent marketing contact in seconds. This value is only known after the contact has ended and is highly predictive of subscription."
+    },
+    {
+      "name": "campaign",
+      "type": "continuous",
+      "min": 1.0,
+      "max": 56.0,
+      "description": "The number of contacts made with the client during the current marketing campaign, including the most recent contact."
+    },
+    {
+      "name": "pdays",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 999.0,
+      "description": "The number of days since the client was last contacted in a previous campaign. The special value 999 means the client was not previously contacted."
+    },
+    {
+      "name": "previous",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "description": "The number of contacts made with the client before the current campaign, represented as one of the observed discrete count values.",
+      "size": 8
+    },
+    {
+      "name": "poutcome",
+      "type": "categorical",
+      "i2s": [
+        "failure",
+        "nonexistent",
+        "success"
+      ],
+      "description": "The outcome of the previous marketing campaign for the client.",
+      "size": 3
+    },
+    {
+      "name": "emp_var_rate",
+      "type": "categorical",
+      "i2s": [
+        "-0.1",
+        "-0.2",
+        "-1.1",
+        "-1.7",
+        "-1.8",
+        "-2.9",
+        "-3.0",
+        "-3.4",
+        "1.1",
+        "1.4"
+      ],
+      "description": "The quarterly employment variation rate. Although numerically ordered, it is represented using the finite set of values observed in this dataset.",
+      "size": 10
+    },
+    {
+      "name": "cons_price_idx",
+      "type": "continuous",
+      "min": 92.201,
+      "max": 94.767,
+      "description": "The monthly consumer price index, representing changes in the prices paid by consumers."
+    },
+    {
+      "name": "cons_conf_idx",
+      "type": "continuous",
+      "min": -50.8,
+      "max": -26.9,
+      "description": "The monthly consumer confidence index, representing consumer sentiment about economic conditions."
+    },
+    {
+      "name": "euribor3m",
+      "type": "continuous",
+      "min": 0.634,
+      "max": 5.045,
+      "description": "The daily three-month Euribor interest rate."
+    },
+    {
+      "name": "nr_employed",
+      "type": "continuous",
+      "min": 4963.6,
+      "max": 5228.1,
+      "description": "The quarterly number of employed people, expressed in thousands."
+    },
+    {
+      "name": "y",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "description": "The target classification label: 1 means the client subscribed to a term deposit and 0 means the client did not subscribe.",
+      "size": 2
+    }
+  ],
+  "task": "binary_classification",
+  "label": "y",
+  "task_description": "Predict whether a bank client subscribed to a term deposit after the recorded marketing contact, using client attributes, campaign history, contact information, and economic indicators.",
+  "positive_label": "1"
+}

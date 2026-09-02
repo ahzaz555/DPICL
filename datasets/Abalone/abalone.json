@@ -1,0 +1,67 @@
+{
+    "columns": [
+        {
+            "i2s": [
+                "F",
+                "I",
+                "M"
+            ],
+            "name": "sex",
+            "size": 3,
+            "type": "categorical"
+        },
+        {
+            "min": 0.075,
+            "max": 0.815,
+            "name": "length",
+            "type": "continuous"
+        },
+        {
+            "min": 0.055,
+            "max": 0.65,
+            "name": "diameter",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0,
+            "max": 1.13,
+            "name": "height",
+            "type": "continuous"
+        },
+        {
+            "min": 0.002,
+            "max": 2.8255,
+            "name": "whole_weight",
+            "type": "continuous"
+        },
+        {
+            "min": 0.001,
+            "max": 1.488,
+            "name": "shucked_weight",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0005,
+            "max": 0.76,
+            "name": "viscera_weight",
+            "type": "continuous"
+        },
+        {
+            "min": 0.0015,
+            "max": 1.005,
+            "name": "shell_weight",
+            "type": "continuous"
+        },
+        {
+            "min": 1,
+            "max": 29,
+            "name": "label",
+            "type": "continuous"
+        }
+    ],
+    "task": "regression",
+    "train_size": 2672,
+    "val_size": 668,
+    "test_size": 836,
+    "label": "label"
+}

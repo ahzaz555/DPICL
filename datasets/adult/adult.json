@@ -1,0 +1,357 @@
+{
+  "columns": [
+    {
+      "name": "age",
+      "type": "continuous",
+      "min": 17,
+      "max": 90,
+      "unit": "years",
+      "description": "The individual's age."
+    },
+    {
+      "name": "workclass",
+      "type": "categorical",
+      "size": 9,
+      "i2s": [
+        "?",
+        "Federal-gov",
+        "Local-gov",
+        "Never-worked",
+        "Private",
+        "Self-emp-inc",
+        "Self-emp-not-inc",
+        "State-gov",
+        "Without-pay"
+      ],
+      "value_labels": {
+        "?": "Unknown/Missing",
+        "Federal-gov": "Federal Government",
+        "Local-gov": "Local Government",
+        "Never-worked": "Never Worked",
+        "Private": "Private Sector",
+        "Self-emp-inc": "Self-Employed (Incorporated)",
+        "Self-emp-not-inc": "Self-Employed (Not Incorporated)",
+        "State-gov": "State Government",
+        "Without-pay": "Without Pay"
+      },
+      "description": "The individual's employment sector or work arrangement."
+    },
+    {
+      "name": "fnlwgt",
+      "type": "continuous",
+      "min": 12285,
+      "max": 1484705,
+      "unit": "people",
+      "description": "The Census final sampling weight. It estimates how many people in the population are represented by this record; it is not personal income or wealth."
+    },
+    {
+      "name": "education",
+      "type": "categorical",
+      "size": 16,
+      "i2s": [
+        "10th",
+        "11th",
+        "12th",
+        "1st-4th",
+        "5th-6th",
+        "7th-8th",
+        "9th",
+        "Assoc-acdm",
+        "Assoc-voc",
+        "Bachelors",
+        "Doctorate",
+        "HS-grad",
+        "Masters",
+        "Preschool",
+        "Prof-school",
+        "Some-college"
+      ],
+      "value_labels": {
+        "10th": "10th Grade",
+        "11th": "11th Grade",
+        "12th": "12th Grade",
+        "1st-4th": "1st to 4th Grade",
+        "5th-6th": "5th to 6th Grade",
+        "7th-8th": "7th to 8th Grade",
+        "9th": "9th Grade",
+        "Assoc-acdm": "Associate Degree (Academic)",
+        "Assoc-voc": "Associate Degree (Vocational)",
+        "Bachelors": "Bachelor's Degree",
+        "Doctorate": "Doctorate Degree",
+        "HS-grad": "High School Graduate",
+        "Masters": "Master's Degree",
+        "Preschool": "Preschool",
+        "Prof-school": "Professional School",
+        "Some-college": "Some College"
+      },
+      "description": "The highest educational qualification or grade level completed by the individual."
+    },
+    {
+      "name": "education-num",
+      "type": "continuous",
+      "min": 1,
+      "max": 16,
+      "unit": "scale (1-16)",
+      "description": "An ordered numeric encoding of educational attainment. Larger values represent higher education levels."
+    },
+    {
+      "name": "marital-status",
+      "type": "categorical",
+      "size": 7,
+      "i2s": [
+        "Divorced",
+        "Married-AF-spouse",
+        "Married-civ-spouse",
+        "Married-spouse-absent",
+        "Never-married",
+        "Separated",
+        "Widowed"
+      ],
+      "value_labels": {
+        "Divorced": "Divorced",
+        "Married-AF-spouse": "Married to Armed Forces Spouse",
+        "Married-civ-spouse": "Married to Civilian Spouse",
+        "Married-spouse-absent": "Married (Spouse Absent)",
+        "Never-married": "Never Married",
+        "Separated": "Separated",
+        "Widowed": "Widowed"
+      },
+      "description": "The individual's current marital-status category."
+    },
+    {
+      "name": "occupation",
+      "type": "categorical",
+      "size": 15,
+      "i2s": [
+        "?",
+        "Adm-clerical",
+        "Armed-Forces",
+        "Craft-repair",
+        "Exec-managerial",
+        "Farming-fishing",
+        "Handlers-cleaners",
+        "Machine-op-inspct",
+        "Other-service",
+        "Priv-house-serv",
+        "Prof-specialty",
+        "Protective-serv",
+        "Sales",
+        "Tech-support",
+        "Transport-moving"
+      ],
+      "value_labels": {
+        "?": "Unknown/Missing",
+        "Adm-clerical": "Administrative/Clerical",
+        "Armed-Forces": "Armed Forces",
+        "Craft-repair": "Craft/Repair",
+        "Exec-managerial": "Executive/Managerial",
+        "Farming-fishing": "Farming/Fishing",
+        "Handlers-cleaners": "Handlers/Cleaners",
+        "Machine-op-inspct": "Machine Operator/Inspector",
+        "Other-service": "Other Service",
+        "Priv-house-serv": "Private House Service",
+        "Prof-specialty": "Professional Specialty",
+        "Protective-serv": "Protective Service",
+        "Sales": "Sales",
+        "Tech-support": "Tech Support",
+        "Transport-moving": "Transport/Moving"
+      },
+      "description": "The individual's occupation or main type of work."
+    },
+    {
+      "name": "relationship",
+      "type": "categorical",
+      "size": 6,
+      "i2s": [
+        "Husband",
+        "Not-in-family",
+        "Other-relative",
+        "Own-child",
+        "Unmarried",
+        "Wife"
+      ],
+      "value_labels": {
+        "Husband": "Husband",
+        "Not-in-family": "Not in family",
+        "Other-relative": "Other relative",
+        "Own-child": "Own child",
+        "Unmarried": "Unmarried",
+        "Wife": "Wife"
+      },
+      "description": "The individual's role or relationship within the household."
+    },
+    {
+      "name": "race",
+      "type": "categorical",
+      "size": 5,
+      "i2s": [
+        "Amer-Indian-Eskimo",
+        "Asian-Pac-Islander",
+        "Black",
+        "Other",
+        "White"
+      ],
+      "value_labels": {
+        "Amer-Indian-Eskimo": "American Indian / Eskimo",
+        "Asian-Pac-Islander": "Asian / Pacific Islander",
+        "Black": "Black",
+        "Other": "Other",
+        "White": "White"
+      },
+      "description": "The race category recorded for the individual."
+    },
+    {
+      "name": "sex",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "Female",
+        "Male"
+      ],
+      "value_labels": {
+        "Female": "Female",
+        "Male": "Male"
+      },
+      "description": "The sex category recorded for the individual."
+    },
+    {
+      "name": "capital-gain",
+      "type": "continuous",
+      "min": 0,
+      "max": 99999,
+      "unit": "US dollars",
+      "description": "Reported amount of capital gain. This is a financial-income-related attribute relevant to income classification."
+    },
+    {
+      "name": "capital-loss",
+      "type": "continuous",
+      "min": 0,
+      "max": 4356,
+      "unit": "US dollars",
+      "description": "Reported amount of capital loss. This is a financial attribute describing capital losses."
+    },
+    {
+      "name": "hours-per-week",
+      "type": "continuous",
+      "min": 1,
+      "max": 99,
+      "unit": "hours/week",
+      "description": "The typical number of hours the individual works per week."
+    },
+    {
+      "name": "native-country",
+      "type": "categorical",
+      "size": 42,
+      "i2s": [
+        "?",
+        "Cambodia",
+        "Canada",
+        "China",
+        "Columbia",
+        "Cuba",
+        "Dominican-Republic",
+        "Ecuador",
+        "El-Salvador",
+        "England",
+        "France",
+        "Germany",
+        "Greece",
+        "Guatemala",
+        "Haiti",
+        "Holand-Netherlands",
+        "Honduras",
+        "Hong",
+        "Hungary",
+        "India",
+        "Iran",
+        "Ireland",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Laos",
+        "Mexico",
+        "Nicaragua",
+        "Outlying-US(Guam-USVI-etc)",
+        "Peru",
+        "Philippines",
+        "Poland",
+        "Portugal",
+        "Puerto-Rico",
+        "Scotland",
+        "South",
+        "Taiwan",
+        "Thailand",
+        "Trinadad&Tobago",
+        "United-States",
+        "Vietnam",
+        "Yugoslavia"
+      ],
+      "value_labels": {
+        "?": "Unknown/Missing",
+        "Cambodia": "Cambodia",
+        "Canada": "Canada",
+        "China": "China",
+        "Columbia": "Colombia",
+        "Cuba": "Cuba",
+        "Dominican-Republic": "Dominican Republic",
+        "Ecuador": "Ecuador",
+        "El-Salvador": "El Salvador",
+        "England": "England",
+        "France": "France",
+        "Germany": "Germany",
+        "Greece": "Greece",
+        "Guatemala": "Guatemala",
+        "Haiti": "Haiti",
+        "Holand-Netherlands": "Netherlands",
+        "Honduras": "Honduras",
+        "Hong": "Hong Kong",
+        "Hungary": "Hungary",
+        "India": "India",
+        "Iran": "Iran",
+        "Ireland": "Ireland",
+        "Italy": "Italy",
+        "Jamaica": "Jamaica",
+        "Japan": "Japan",
+        "Laos": "Laos",
+        "Mexico": "Mexico",
+        "Nicaragua": "Nicaragua",
+        "Outlying-US(Guam-USVI-etc)": "Outlying US Territories",
+        "Peru": "Peru",
+        "Philippines": "Philippines",
+        "Poland": "Poland",
+        "Portugal": "Portugal",
+        "Puerto-Rico": "Puerto Rico",
+        "Scotland": "Scotland",
+        "South": "South Korea",
+        "Taiwan": "Taiwan",
+        "Thailand": "Thailand",
+        "Trinadad&Tobago": "Trinidad & Tobago",
+        "United-States": "United States",
+        "Vietnam": "Vietnam",
+        "Yugoslavia": "Yugoslavia"
+      },
+      "description": "The individual's reported country of birth or origin."
+    },
+    {
+      "name": "label",
+      "type": "categorical",
+      "size": 2,
+      "i2s": [
+        "<=50K",
+        ">50K"
+      ],
+      "value_labels": {
+        "<=50K": "Income is at most $50,000",
+        ">50K": "Income is greater than $50,000"
+      },
+      "description": "The target label."
+    }
+  ],
+  "task": "binary_classification",
+  "task_description": "Predict whether an individual's annual income is greater than $50,000 using demographic, education, employment, household, and financial attributes.",
+  "train_size": 20838,
+  "val_size": 5210,
+  "test_size": 6513,
+  "label": "label",
+  "positive_label": ">50K"
+}

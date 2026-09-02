@@ -1,0 +1,391 @@
+{
+  "dataset": "ACSPublicCoverage",
+  "task": "binary_classification",
+  "label": "label",
+  "columns": [
+    {
+      "name": "AGEP",
+      "type": "continuous",
+      "min": 0,
+      "max": 64,
+      "description": "Age in completed years. The ACSPublicCoverage task is restricted to people younger than 65.",
+      "prompt_name": "age",
+      "unit": "years"
+    },
+    {
+      "name": "SCHL",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "description": "Educational attainment code: 1=no schooling completed; 2=nursery/preschool; 3=kindergarten; 4=grade 1; 5=grade 2; 6=grade 3; 7=grade 4; 8=grade 5; 9=grade 6; 10=grade 7; 11=grade 8; 12=grade 9; 13=grade 10; 14=grade 11; 15=12th grade without diploma; 16=regular high school diploma; 17=GED or alternative credential; 18=some college under one year; 19=one or more years of college credit without a degree; 20=associate degree; 21=bachelor's degree; 22=master's degree; 23=professional degree beyond bachelor's; 24=doctorate degree.",
+      "prompt_name": "highest education level",
+      "value_labels": {
+        "1": "no schooling completed",
+        "2": "nursery school or preschool",
+        "3": "kindergarten",
+        "4": "grade 1",
+        "5": "grade 2",
+        "6": "grade 3",
+        "7": "grade 4",
+        "8": "grade 5",
+        "9": "grade 6",
+        "10": "grade 7",
+        "11": "grade 8",
+        "12": "grade 9",
+        "13": "grade 10",
+        "14": "grade 11",
+        "15": "12th grade without a diploma",
+        "16": "regular high school diploma",
+        "17": "GED or alternative credential",
+        "18": "some college, less than one year",
+        "19": "one or more years of college credit, no degree",
+        "20": "associate degree",
+        "21": "bachelor's degree",
+        "22": "master's degree",
+        "23": "professional degree beyond a bachelor's degree",
+        "24": "doctorate degree"
+      },
+      "size": 24
+    },
+    {
+      "name": "MAR",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Marital status code: 1=married; 2=widowed; 3=divorced; 4=separated; 5=never married or under age 15.",
+      "prompt_name": "marital status",
+      "value_labels": {
+        "1": "married",
+        "2": "widowed",
+        "3": "divorced",
+        "4": "separated",
+        "5": "never married or younger than 15"
+      },
+      "size": 5
+    },
+    {
+      "name": "SEX",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Sex code recorded by the ACS: 1=male; 2=female.",
+      "prompt_name": "recorded sex",
+      "value_labels": {
+        "1": "male",
+        "2": "female"
+      },
+      "size": 2
+    },
+    {
+      "name": "DIS",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Disability recode: 1=with a disability; 2=without a disability.",
+      "prompt_name": "any disability",
+      "value_labels": {
+        "1": "has a disability",
+        "2": "does not have a disability"
+      },
+      "size": 2
+    },
+    {
+      "name": "ESP",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "description": "Employment status of parents: 0=not applicable; 1=living with two parents, both in labor force; 2=living with two parents, father only in labor force; 3=living with two parents, mother only in labor force; 4=living with two parents, neither in labor force; 5=living with father who is in labor force; 6=living with father who is not in labor force; 7=living with mother who is in labor force; 8=living with mother who is not in labor force.",
+      "prompt_name": "parents' employment status",
+      "value_labels": {
+        "0": "not applicable",
+        "1": "lives with two parents, both in the labor force",
+        "2": "lives with two parents, father only in the labor force",
+        "3": "lives with two parents, mother only in the labor force",
+        "4": "lives with two parents, neither in the labor force",
+        "5": "lives with father who is in the labor force",
+        "6": "lives with father who is not in the labor force",
+        "7": "lives with mother who is in the labor force",
+        "8": "lives with mother who is not in the labor force"
+      },
+      "size": 9
+    },
+    {
+      "name": "CIT",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "description": "Citizenship status: 1=born in the United States; 2=born in Puerto Rico, Guam, U.S. Virgin Islands, or Northern Mariana Islands; 3=born abroad to U.S.-citizen parent or parents; 4=U.S. citizen by naturalization; 5=not a U.S. citizen.",
+      "prompt_name": "citizenship status",
+      "value_labels": {
+        "1": "born in the United States",
+        "2": "born in Puerto Rico or another U.S. island area",
+        "3": "born abroad to U.S.-citizen parent or parents",
+        "4": "U.S. citizen by naturalization",
+        "5": "not a U.S. citizen"
+      },
+      "size": 5
+    },
+    {
+      "name": "MIG",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3"
+      ],
+      "description": "Mobility status relative to one year ago: 1=same house; 2=lived outside the United States or Puerto Rico; 3=different house in the United States or Puerto Rico.",
+      "prompt_name": "residence one year ago",
+      "value_labels": {
+        "1": "same house as one year ago",
+        "2": "lived outside the United States or Puerto Rico one year ago",
+        "3": "different house in the United States or Puerto Rico one year ago"
+      },
+      "size": 3
+    },
+    {
+      "name": "MIL",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "description": "Military service: 0=not applicable, generally under age 17; 1=currently on active duty; 2=previously on active duty but not now; 3=active duty only for training in the Reserves or National Guard; 4=never served in the military.",
+      "prompt_name": "military service status",
+      "value_labels": {
+        "0": "not applicable, generally younger than 17",
+        "1": "currently on active duty",
+        "2": "previously on active duty but not now",
+        "3": "active duty only for Reserve or National Guard training",
+        "4": "never served in the military"
+      },
+      "size": 5
+    },
+    {
+      "name": "ANC",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "description": "Ancestry response recode: 1=single ancestry; 2=multiple ancestries; 3=unclassified; 4=not reported.",
+      "prompt_name": "ancestry response category",
+      "value_labels": {
+        "1": "single ancestry reported",
+        "2": "multiple ancestries reported",
+        "3": "ancestry unclassified",
+        "4": "ancestry not reported"
+      },
+      "size": 4
+    },
+    {
+      "name": "NATIVITY",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Nativity: 1=native-born; 2=foreign-born.",
+      "prompt_name": "nativity",
+      "value_labels": {
+        "1": "native-born",
+        "2": "foreign-born"
+      },
+      "size": 2
+    },
+    {
+      "name": "DEAR",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Hearing difficulty: 1=yes; 2=no.",
+      "prompt_name": "hearing difficulty",
+      "value_labels": {
+        "1": "yes",
+        "2": "no"
+      },
+      "size": 2
+    },
+    {
+      "name": "DEYE",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Vision difficulty: 1=yes; 2=no.",
+      "prompt_name": "vision difficulty",
+      "value_labels": {
+        "1": "yes",
+        "2": "no"
+      },
+      "size": 2
+    },
+    {
+      "name": "DREM",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2"
+      ],
+      "description": "Cognitive difficulty involving remembering, concentrating, or making decisions: 1=yes; 2=no.",
+      "prompt_name": "cognitive difficulty",
+      "value_labels": {
+        "1": "yes",
+        "2": "no"
+      },
+      "size": 2
+    },
+    {
+      "name": "PINCP",
+      "type": "continuous",
+      "min": -19997,
+      "max": 30000,
+      "description": "Total personal income in dollars. Zero means no personal income; negative values indicate a net loss. The task population is restricted to income at or below $30,000.",
+      "prompt_name": "personal income",
+      "unit": "U.S. dollars"
+    },
+    {
+      "name": "ESR",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "description": "Employment status: 0=not applicable, generally under age 16; 1=civilian employed and at work; 2=civilian employed with a job but not at work; 3=unemployed; 4=armed forces and at work; 5=armed forces with a job but not at work; 6=not in labor force.",
+      "prompt_name": "employment status",
+      "value_labels": {
+        "0": "not applicable, generally younger than 16",
+        "1": "civilian employed and at work",
+        "2": "civilian employed with a job but not at work",
+        "3": "unemployed",
+        "4": "in the armed forces and at work",
+        "5": "in the armed forces with a job but not at work",
+        "6": "not in the labor force"
+      },
+      "size": 7
+    },
+    {
+      "name": "FER",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1",
+        "2"
+      ],
+      "description": "Gave birth within the past 12 months: 0=not applicable; 1=yes; 2=no.",
+      "prompt_name": "gave birth in past 12 months",
+      "value_labels": {
+        "0": "not applicable",
+        "1": "yes",
+        "2": "no"
+      },
+      "size": 3
+    },
+    {
+      "name": "RAC1P",
+      "type": "categorical",
+      "i2s": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "description": "Race recode: 1=White alone; 2=Black or African American alone; 3=American Indian alone; 4=Alaska Native alone; 5=specified American Indian or Alaska Native tribal category; 6=Asian alone; 7=Native Hawaiian or Other Pacific Islander alone; 8=some other race alone; 9=two or more races.",
+      "prompt_name": "race category",
+      "value_labels": {
+        "1": "White alone",
+        "2": "Black or African American alone",
+        "3": "American Indian alone",
+        "4": "Alaska Native alone",
+        "5": "specified American Indian or Alaska Native tribal category",
+        "6": "Asian alone",
+        "7": "Native Hawaiian or Other Pacific Islander alone",
+        "8": "some other race alone",
+        "9": "two or more races"
+      },
+      "size": 9
+    },
+    {
+      "name": "label",
+      "type": "categorical",
+      "i2s": [
+        "0",
+        "1"
+      ],
+      "description": "Prediction target derived from PUBCOV: 0=not covered by public health insurance; 1=covered by public health insurance.",
+      "prompt_name": "public health insurance coverage",
+      "value_labels": {
+        "0": "not covered by public health insurance",
+        "1": "covered by public health insurance"
+      },
+      "size": 2
+    }
+  ],
+  "task_description": "Predict whether a person younger than 65 with personal income at or below $30,000 is covered by public health insurance.",
+  "train_size": 110843,
+  "test_size": 27711
+}
