@@ -34,7 +34,7 @@ os.environ['VECLIB_MAXIMUM_THREADS'] = '16'
 os.environ['NUMEXPR_NUM_THREADS'] = '16'
 os.environ['NUMBA_NUM_THREADS'] = '16'
 THREAT_MODEL = 'trusted_curator'
-DEBUG_GENERATE = True
+DEBUG_GENERATE = False
 DP_PRIVATE_DEBUG = False
 SERIALIZATION = 'json'
 UNWEIGHTED_ABLATION = False
@@ -1039,7 +1039,7 @@ def llm_predict_binary(system_msg: str, user_msg: str) -> int:
     if not hasattr(llm_predict_binary, "_debug_count"):
         llm_predict_binary._debug_count = 0
     
-    if llm_predict_binary._debug_count < 5:
+    if llm_predict_binary._debug_count < 1:
         print(
             "\n[INFERENCE DEBUG]",
             "\nscore_0:", score_0,
@@ -1105,7 +1105,6 @@ def sample_balanced_shots(pool_df: pd.DataFrame, k: int, seed: int, label_col: s
     s_neg = neg.sample(n=k_neg, replace=k_neg > len(neg), random_state=seed + 1)
     shots = pd.concat([s_pos, s_neg], axis=0)
     shots = shots.sample(frac=1.0, random_state=seed + 3).reset_index(drop=True)
-    print('[DEBUG shots] seed =', seed, '| labels =', shots[label_col].tolist())
     return shots
 
 def retrieve_nearest_shots(pool_df, row_dict, k, num_cols, cat_cols, seed=None):
@@ -2029,7 +2028,6 @@ def build_C3_global_privsyn_pool(train_df, num_cols, cat_cols, cat_domains, eps_
         synth_df[c] = [domain_vals[i] for i in ids.to_numpy()]
     synth_df['target'] = pd.to_numeric(synth_encoded['target'], errors='coerce').fillna(0).astype(int).clip(0, 1)
     synth_df = synth_df[ordered_cols].reset_index(drop=True)
-    print('[DEBUG C3_GLOBAL_PRIVSYN official]', 'n_synth:', len(synth_df), 'labels:', synth_df['target'].value_counts().to_dict())
     return synth_df
 
 def build_C3_privsyn_ta_construct(train_df, num_cols, cat_cols, cat_domains, eps_cluster, eps_synth, k, rng, rows_per_cluster, feature_weights, random_state, n_bins=8, delta=1e-05, privsyn_home=None, consistency_iterations=2, view_iterations=10, gum_iterations=20, min_cluster_size=5):
@@ -2188,7 +2186,6 @@ def build_C3_privsyn_icl_all_star(train_df, num_cols, cat_cols, cat_domains,
                 'private_cluster_rows': int(len(df_c)),
             }
         except Exception as exc:
-            print(f'[DP-SAMPLE LLM FALLBACK] cluster={c} error={exc!r}')
             synth_store[c] = fallback[ordered_cols].reset_index(drop=True)
             log[c] = {
                 'used_features': all_features,
