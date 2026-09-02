@@ -169,3 +169,5 @@ Results are appended to the specified CSV file.
 ## Reproducibility notes
 
 The implementation uses fixed seeds for the data partitioning and method-specific randomization. GPU libraries and LLM inference can nevertheless exhibit environment-dependent numerical differences. The released scripts retain the experiment logic used for the reported results rather than being refactored into a new software architecture.
+
+Note: A cleaned and modularized version of the code is available in the `main` branch for easier readability and execution. The original experimental implementation has been preserved separately. The cleaned version was refactored for organization and reproducibility and, while it is intended to preserve the original experimental behavior, minor differences may remain due to the code-cleaning and restructuring process.
