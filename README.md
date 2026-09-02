@@ -1,6 +1,6 @@
 # PriTabICL
 
-This repository contains the implementation used for the experiments reported in the accompanying anonymous submission.
+This repository contains the implementation used for the experiments reported in the submission.
 
 The code is released with minimal structural modification from the experimental version used to obtain the reported results. The main implementation is intentionally kept close to the original experiment code to reduce the possibility of discrepancies between the released artifact and the reported results.
 
@@ -96,7 +96,7 @@ python Pritabicl_Privsyn_Main.py \
   --datasets Phishing Diabetes Adult Airline \
   --trials 10 \
   --k_list 3 \
-  --eps_list 1.0 \
+  --eps_list 1 2 4\
   --methods C3_PRIVSYN_ICL_DP_SAMPLE_LLM \
   --results_csv pritabicl_privsyn_results.csv
 ```
@@ -108,7 +108,7 @@ python Pritabicl_Privsyn_Main.py \
   --datasets Phishing \
   --trials 10 \
   --k_list 3 \
-  --eps_list 0.5 1.0 2.0 \
+  --eps_list 1 2 4 \
   --methods C3_PRIVSYN_ICL_DP_SAMPLE_LLM \
   --results_csv adult_results.csv
 ```
