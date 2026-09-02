@@ -2743,8 +2743,8 @@ def run_epsilon_protocol(datasets_to_run=None, n_trials=20, k_list=None, eps_lis
                         method_seed = trial_seed + METHOD_SEED_OFFSETS['C3_PRIVSYN_ICL_DP_SAMPLE_LLM']
                         set_seed(method_seed)
                         rng_main = np.random.RandomState(method_seed + 1)
-                        eps_main_cluster = 0.40 * eps
-                        eps_main_synth = 0.60 * eps
+                        eps_main_cluster = 0.30 * eps
+                        eps_main_synth = 0.70 * eps
                         c3_dp_sample_centers, c3_dp_sample_store, c3_dp_sample_log, c3_dp_sample_onehot_spec = build_C3_privsyn_icl_all_star(
                             train_df=c3_main_df_cached, num_cols=num_cols, cat_cols=cat_cols, cat_domains=cat_domains, 
                             eps_cluster=eps_main_cluster, eps_synth=eps_main_synth, k=K, rng=rng_main,
